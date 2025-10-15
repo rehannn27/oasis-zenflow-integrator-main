@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supabase Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <h2>Check browser console for test results</h2>
+    
+    <script>
+        // Wait for Supabase to load properly
+        setTimeout(async () => {
+            // Initialize Supabase using window.supabase
+            const supabase = window.supabase.createClient(
+                'https://wzjrexsgcboehuqlmmcr.supabase.co',
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind6anJleHNnY2JvZWh1cWxtbWNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAxMTQ5NzIsImV4cCI6MjA3NTY5MDk3Mn0.eRju4TpRk112Fo0qL9enSkP3zcLtlUd_LRyuz97p_h8'
+            )
+
+            console.log('Supabase initialized:', !!supabase)
+            
+            // First, sign in or sign up
+            await signInTestUser(supabase)
+            
+            // Then run your test
+            await testAuthorSetup(supabase)
+        }, 100)
+
+        // 🔐 UPDATED SIGN-IN WITH REAL EMAIL DOMAIN
+        async function signInTestUser(supabase) {
+            // Use a real email domain that Supabase accepts
+            const timestamp = Date.now()
+            const testEmail = `test${timestamp}@gmail.com`  // Changed to real domain
+            const testPassword = 'testpassword123'
+            
+            console.log('Trying email:', testEmail)
+            
+            // Try to sign up
+            console.log('Creating new test user...')
+            const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+                email: testEmail,
+                password: testPassword
+            })
+            
+            if (signUpError) {
+                console.error('❌ Sign up error:', signUpError.message)
+                return
+            }
+            
+            if (signUpData.user) {
+                console.log('✅ User created:', signUpData.user.email)
+                
+                // If email confirmation is required, we need to handle it
+                if (!signUpData.user.email_confirmed_at) {
+                    console.log('⚠️  Email confirmation required. Check Supabase Auth settings to disable it for testing.')
+                    return
+                }
+                
+                console.log('✅ User is confirmed and logged in')
+            }
+        }
+
+        async function testAuthorSetup(supabase) {
+            console.log('=== Testing Author Setup ===')
+            
+            // 1. Make sure user is logged in
+            const { data: { user } } = await supabase.auth.getUser()
+            console.log('Current user:', user?.email)
+            console.log('User ID:', user?.id)
+            
+            if (!user) {
+                console.error('❌ No user logged in!')
+                console.log('💡 You need to disable email confirmation in Supabase:')
+                console.log('1. Go to Authentication → Settings')
+                console.log('2. Disable "Confirm email"')
+                console.log('3. Save and try again')
+                return
+            }
+            
+            // 2. Create a test post
+            console.log('Creating test post...')
+            const { data, error } = await supabase
+                .from('posts')
+                .insert([
+                    { 
+                        title: 'Test Post ' + Date.now(), 
+                        content: 'This is a test post created at ' + new Date().toLocaleString() 
+                    }
+                ])
+                .select()
+            
+            if (error) {
+                console.error('❌ Error creating post:', error)
+            } else {
+                console.log('✅ Post created successfully:', data)
+            }
+            
+            // 3. Read posts (should only see user's posts)
+            console.log('Reading user posts...')
+            const { data: posts, error: readError } = await supabase
+                .from('posts')
+                .select('*')
+                .order('created_at', { ascending: false })
+            
+            if (readError) {
+                console.error('❌ Error reading posts:', readError)
+            } else {
+                console.log('✅ User posts:', posts)
+                console.log('Total posts found:', posts.length)
+            }
+            
+            console.log('=== Test Complete ===')
+        }
+    </script>
+</body>
+</html>

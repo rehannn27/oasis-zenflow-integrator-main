@@ -1,0 +1,132 @@
+import { Card } from "@/components/ui/card";
+import { Sparkles } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { getSupabaseClient, isSupabaseConfigured } from "@/lib/supabaseClient";
+
+type GalleryImage = { src: string; title: string; category?: string };
+
+function humanizeFilename(path: string): string {
+  const filename = path.split("/").pop() || path;
+  const name = filename.replace(/\.[^.]+$/, "");
+  return name
+    .replace(/[-_]+/g, " ")
+    .replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
+export default function Gallery() {
+  const [images, setImages] = useState<GalleryImage[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // Local images fallback (auto-import everything in src/assets)
+  const localImages = useMemo<GalleryImage[]>(() => {
+    const modules = import.meta.glob("/src/assets/*.{jpg,jpeg,png,webp}", {
+      eager: true,
+      as: "url",
+    }) as Record<string, string>;
+
+    return Object.entries(modules)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([path, url]) => ({ src: url, title: humanizeFilename(path) }));
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function load() {
+      // Prefer Supabase if configured, fallback to local assets
+      if (isSupabaseConfigured()) {
+        try {
+          const supabase = getSupabaseClient();
+          if (supabase) {
+            const { data, error } = await supabase.storage
+              .from("gallery")
+              .list("", { limit: 100 });
+            if (error) throw error;
+            const withUrls: GalleryImage[] = (data || [])
+              .filter((f) => f.name && !f.name.endsWith("/"))
+              .map((f) => {
+                const { data: urlData } = supabase.storage
+                  .from("gallery")
+                  .getPublicUrl(f.name);
+                return { src: urlData.publicUrl, title: humanizeFilename(f.name) };
+              });
+            if (!cancelled) setImages(withUrls.length ? withUrls : localImages);
+          } else {
+            if (!cancelled) setImages(localImages);
+          }
+        } catch {
+          if (!cancelled) setImages(localImages);
+        } finally {
+          if (!cancelled) setLoading(false);
+        }
+        return;
+      }
+
+      setImages(localImages);
+      setLoading(false);
+    }
+
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [localImages]);
+
+  return (
+    <div className="min-h-screen py-12 px-4">
+      <div className="container mx-auto max-w-6xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
+            <Sparkles className="h-4 w-4" />
+            <span className="text-sm font-medium">Visual Gallery</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Explore Our Spaces</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Take a visual journey through our tranquil Atlanta and St. Lucia locations
+          </p>
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {images.map((img, index) => (
+            <Card
+              key={`${img.src}-${index}`}
+              className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+            >
+              <div className="relative h-64 bg-muted">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={img.src}
+                  alt={img.title}
+                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-base font-semibold">{img.title}</h3>
+                {img.category ? (
+                  <span className="text-xs text-primary">{img.category}</span>
+                ) : null}
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        {/* Empty/Loading States */}
+        {loading ? (
+          <div className="mt-12 text-center text-muted-foreground">Loading images…</div>
+        ) : images.length === 0 ? (
+          <div className="mt-12 text-center">
+            <Card className="p-8 bg-gradient-calm border-2 border-primary/20 max-w-2xl mx-auto">
+              <p className="text-muted-foreground">
+                No images found. Add files to `src/assets` or upload to the Supabase
+                `gallery` bucket and make the bucket public.
+              </p>
+            </Card>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
