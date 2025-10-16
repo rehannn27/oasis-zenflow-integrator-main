@@ -21,12 +21,39 @@ export default function Gallery() {
   const localImages = useMemo<GalleryImage[]>(() => {
     const modules = import.meta.glob("/src/assets/*.{jpg,jpeg,png,webp}", {
       eager: true,
-      as: "url",
+      // use query/import to avoid deprecation warning
+      query: "?url",
+      import: "default",
     }) as Record<string, string>;
 
     return Object.entries(modules)
       .sort(([a], [b]) => a.localeCompare(b))
-      .map(([path, url]) => ({ src: url, title: humanizeFilename(path) }));
+      .map(([path, url]) => {
+        const filename = path.toLowerCase();
+        let category = "General";
+
+        if (filename.includes("atlanta")) {
+          category = "Atlanta";
+        } else if (
+          filename.includes("stlucia") ||
+          filename.includes("st-lucia") ||
+          filename.includes(" lucia") ||
+          filename.includes("caribbean")
+        ) {
+          category = "St. Lucia";
+        }
+
+        const base = (path.split("/").pop() || "").toLowerCase();
+        const isNumbered = /^\d+\.(jpg|jpeg|png|webp)$/.test(base);
+        const looksLikeHouse = base.includes("house");
+        // Exclude generic/numbered/house images from the unified gallery
+        if (isNumbered || looksLikeHouse || category === "General") {
+          return null as unknown as GalleryImage;
+        }
+
+        return { src: url, title: humanizeFilename(path), category };
+      })
+      .filter(Boolean) as GalleryImage[];
   }, []);
 
   useEffect(() => {
@@ -87,31 +114,41 @@ export default function Gallery() {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((img, index) => (
-            <Card
-              key={`${img.src}-${index}`}
-              className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
-            >
-              <div className="relative h-64 bg-muted">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={img.src}
-                  alt={img.title}
-                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                  loading="lazy"
-                />
+        {/* Gallery Grid - Organized by Location */}
+        {["Atlanta", "St. Lucia"].map((location) => {
+          const locationImages = images.filter(img => img.category === location);
+          if (locationImages.length === 0) return null;
+          
+          return (
+            <div key={location} className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-center">
+                {location === "General" ? "General Gallery" : `${location} Location`}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {locationImages.map((img, index) => (
+                  <Card
+                    key={`${img.src}-${index}`}
+                    className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+                  >
+                    <div className="relative h-64 bg-muted">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={img.src}
+                        alt={img.title}
+                        className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-base font-semibold">{img.title}</h3>
+                      <span className="text-xs text-primary">{img.category}</span>
+                    </div>
+                  </Card>
+                ))}
               </div>
-              <div className="p-4">
-                <h3 className="text-base font-semibold">{img.title}</h3>
-                {img.category ? (
-                  <span className="text-xs text-primary">{img.category}</span>
-                ) : null}
-              </div>
-            </Card>
-          ))}
-        </div>
+            </div>
+          );
+        })}
 
         {/* Empty/Loading States */}
         {loading ? (

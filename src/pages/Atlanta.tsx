@@ -45,7 +45,7 @@ export default function Atlanta() {
         <div className="container mx-auto max-w-6xl">
           <div className="flex items-center gap-2 text-primary mb-4">
             <MapPin className="h-5 w-5" />
-            <span className="text-sm font-medium">Atlanta, Georgia</span>
+            <span className="text-sm font-medium">Snellville, GA 30039 USA</span>
           </div>
           <h1 className="text-5xl font-bold mb-6">Oasis of Calm Atlanta</h1>
           <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
@@ -53,6 +53,33 @@ export default function Atlanta() {
             that beckons you to rest, reset and rejuvenate. Experience a peaceful sanctuary 
             conveniently near Stone Mountain Park, theaters, restaurants, and shopping.
           </p>
+        </div>
+      </section>
+
+      {/* Atlanta Gallery */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl font-bold mb-12 text-center">Atlanta Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <img
+              src="/src/assets/atlanta-luxury-suite-bed.jpg"
+              alt="Atlanta Luxury Suite"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <img
+              src="/src/assets/atlanta-basement-retreat-bed.jpg"
+              alt="Atlanta Basement Retreat"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <img
+              src="/src/assets/atlanta-botanical-garden.jpg"
+              alt="Atlanta Botanical Garden"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
@@ -94,6 +121,14 @@ export default function Atlanta() {
                   <CardTitle className="text-2xl">{room.title}</CardTitle>
                   <p className="text-sm opacity-90">{room.view}</p>
                 </CardHeader>
+                <div className="relative h-48 bg-muted">
+                  <img
+                    src={index === 0 ? "/src/assets/atlanta-luxury-suite-bed.jpg" : "/src/assets/atlanta-basement-retreat-bed.jpg"}
+                    alt={`${room.title} bed and amenities`}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 <CardContent className="p-6">
                   <div className="flex gap-6 mb-6 text-sm">
                     <div className="flex items-center gap-2">
@@ -147,6 +182,80 @@ export default function Atlanta() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Nearby Attractions */}
+      <section className="py-16 px-4 bg-gradient-sunset text-secondary-foreground">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl font-bold mb-8 text-center">Nearby Attractions</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+              <div className="relative h-48 bg-muted">
+                <img
+                  src="/src/assets/atlanta-stone-mountain.jpg"
+                  alt="Stone Mountain Park"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">Stone Mountain Park</h3>
+                <p className="text-sm text-muted-foreground">Historic park with hiking trails, laser shows, and family activities</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+              <div className="relative h-48 bg-muted">
+                <img
+                  src="/src/assets/atlanta-botanical-garden.jpg"
+                  alt="Atlanta Botanical Garden"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">Atlanta Botanical Garden</h3>
+                <p className="text-sm text-muted-foreground">Beautiful gardens and conservatory with seasonal displays</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+              <div className="relative h-48 bg-muted">
+                <img
+                  src="/src/assets/atlanta-olympic-park.jpg"
+                  alt="Centennial Olympic Park"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">Centennial Olympic Park</h3>
+                <p className="text-sm text-muted-foreground">Downtown park with fountains, events, and city views</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="text-center p-8">
+            <CardContent>
+              <h2 className="text-3xl font-bold mb-6">Contact Us</h2>
+              <div className="space-y-4">
+                <div className="flex items-center justify-center gap-2">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <span>Snellville, GA 30039 USA</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-lg">📞 404-433-2899</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <span>✉️ oasisofcalmholisticcenter@gmail.com</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

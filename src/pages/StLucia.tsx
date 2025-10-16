@@ -26,6 +26,7 @@ export default function StLucia() {
     "Excursions & Tours",
     "SPA Treatments",
     "Premium Bath Amenities",
+    "Authentic Caribbean Cuisine",
   ];
 
   return (
@@ -43,6 +44,33 @@ export default function StLucia() {
             Saint Lucia is one of the Caribbean's most unique and captivating getaway spots. Experience 
             paradise with breathtaking ocean views of the Caribbean Sea.
           </p>
+        </div>
+      </section>
+
+      {/* St. Lucia Gallery */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl font-bold mb-12 text-center">St. Lucia Gallery</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <img
+              src="/src/assets/stlucia-cabin-bed.jpg"
+              alt="St. Lucia Cabin Bed"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <img
+              src="/src/assets/stlucia-pitons.jpg"
+              alt="Twin Pitons"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <img
+              src="/src/assets/stlucia-marigot-bay.jpg"
+              alt="Marigot Bay"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
 
@@ -86,6 +114,14 @@ export default function StLucia() {
                 <CardTitle className="text-2xl">Entire Oceanview Cabin</CardTitle>
                 <p className="text-sm">Caribbean Sea View</p>
               </CardHeader>
+              <div className="relative h-48 bg-muted">
+                <img
+                  src="/src/assets/stlucia-cabin-bed.jpg"
+                  alt="St. Lucia cabin bed and amenities"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
               <CardContent className="p-6">
                 <div className="flex gap-6 mb-6 text-sm">
                   <div className="flex items-center gap-2">
@@ -166,24 +202,66 @@ export default function StLucia() {
       {/* Attractions */}
       <section className="py-16 px-4 bg-gradient-sunset text-secondary-foreground">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold mb-8 text-center">Nearby Attractions</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center">Caribbean Attractions</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <Card className="text-center p-6">
-              <CardContent className="p-0">
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+              <div className="relative h-48 bg-muted">
+                <img
+                  src="/src/assets/stlucia-pitons.jpg"
+                  alt="Twin Pitons"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
                 <h3 className="font-semibold mb-2">Twin Pitons</h3>
                 <p className="text-sm text-muted-foreground">Iconic volcanic peaks and UNESCO World Heritage site</p>
               </CardContent>
             </Card>
-            <Card className="text-center p-6">
-              <CardContent className="p-0">
-                <h3 className="font-semibold mb-2">Beautiful Beaches</h3>
-                <p className="text-sm text-muted-foreground">Short drive to pristine Caribbean beaches</p>
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+              <div className="relative h-48 bg-muted">
+                <img
+                  src="/src/assets/stlucia-sulphur-springs.jpg"
+                  alt="Sulphur Springs"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">Sulphur Springs</h3>
+                <p className="text-sm text-muted-foreground">World's only drive-in volcano with therapeutic mud baths</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+              <div className="relative h-48 bg-muted">
+                <img
+                  src="/src/assets/stlucia-marigot-bay.jpg"
+                  alt="Marigot Bay"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">Marigot Bay</h3>
+                <p className="text-sm text-muted-foreground">Picturesque bay featured in movies, perfect for sailing</p>
               </CardContent>
             </Card>
             <Card className="text-center p-6">
               <CardContent className="p-0">
-                <h3 className="font-semibold mb-2">City Market</h3>
-                <p className="text-sm text-muted-foreground">Local culture and authentic island shopping</p>
+                <h3 className="font-semibold mb-2">Pigeon Island</h3>
+                <p className="text-sm text-muted-foreground">Historic national park with hiking trails and beaches</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center p-6">
+              <CardContent className="p-0">
+                <h3 className="font-semibold mb-2">Diamond Falls</h3>
+                <p className="text-sm text-muted-foreground">Beautiful waterfall with mineral-rich waters</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center p-6">
+              <CardContent className="p-0">
+                <h3 className="font-semibold mb-2">Castries Market</h3>
+                <p className="text-sm text-muted-foreground">Vibrant local market with crafts, spices, and fresh produce</p>
               </CardContent>
             </Card>
           </div>
@@ -199,13 +277,13 @@ export default function StLucia() {
               <div className="space-y-4">
                 <div className="flex items-center justify-center gap-2">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span>The Morne/LA Toc, St. Lucia W.I</span>
+                  <span>The Morne, St. Lucia WI</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
-                  <span className="text-lg">📞 758.451.7375</span>
+                  <span className="text-lg">📞 758-451-7375</span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
-                  <span>✉️ oasiscalmholisticcenter@gmail.com</span>
+                  <span>✉️ oasisofcalmholisticcenter@gmail.com</span>
                 </div>
               </div>
             </CardContent>
