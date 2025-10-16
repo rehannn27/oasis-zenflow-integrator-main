@@ -12,11 +12,11 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                <p>Suburbs of Atlanta, GA<br />Near Stone Mountain Park</p>
+                <p>Snellville, GA 30039 USA<br />Near Stone Mountain Park</p>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <p>Contact for details</p>
+                <p>404-433-2899</p>
               </div>
             </div>
           </div>
@@ -27,11 +27,11 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                <p>The Morne/LA Toc<br />St. Lucia, W.I</p>
+                <p>The Morne, St. Lucia WI</p>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <p>758.451.7375</p>
+                <p>758-451-7375</p>
               </div>
             </div>
           </div>
@@ -42,8 +42,8 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <a href="mailto:oasiscalmholisticcenter@gmail.com" className="hover:text-primary-foreground">
-                  oasiscalmholisticcenter@gmail.com
+                <a href="mailto:oasisofcalmholisticcenter@gmail.com" className="hover:text-primary-foreground">
+                  oasisofcalmholisticcenter@gmail.com
                 </a>
               </div>
               <div className="pt-2">
