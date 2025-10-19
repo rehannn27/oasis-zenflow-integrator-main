@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar } from "lucide-react";
+import BedroomImg from "../assets/Bedroom.png";
+import Bedroom2Img from "../assets/Bedroom (2).png";
+import LivingRoomImg from "../assets/Living Room.png";
+import CreeksideImg from "../assets/Creekside.png";
+import LoungeImg from "../assets/Lounge.png";
+import SwingImg from "../assets/Swing.png";
 
 export default function Atlanta() {
   const accommodations = [
@@ -62,19 +68,19 @@ export default function Atlanta() {
           <h2 className="text-4xl font-bold mb-12 text-center">Atlanta Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <img
-              src="/src/assets/Bedroom.png"
+              src={BedroomImg}
               alt="Atlanta Luxury Suite"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src="/src/assets/Bedroom (2).png"
+              src={Bedroom2Img}
               alt="Atlanta Basement Retreat"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src="/src/assets/Living Room.png"
+              src={LivingRoomImg}
               alt="Atlanta Living Space"
               className="w-full h-64 object-cover"
               loading="lazy"
@@ -123,7 +129,7 @@ export default function Atlanta() {
                 </CardHeader>
                 <div className="relative h-48 bg-muted">
                   <img
-                    src={index === 0 ? "/src/assets/Bedroom.png" : "/src/assets/Bedroom (2).png"}
+                    src={index === 0 ? BedroomImg : Bedroom2Img}
                     alt={`${room.title} bed and amenities`}
                     className="h-full w-full object-cover"
                     loading="lazy"
@@ -193,7 +199,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/Creekside.png"
+                  src={CreeksideImg}
                   alt="Stone Mountain Park"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -207,7 +213,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/Lounge.png"
+                  src={LoungeImg}
                   alt="Atlanta Botanical Garden"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -221,7 +227,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/Swing.png"
+                  src={SwingImg}
                   alt="Centennial Olympic Park"
                   className="h-full w-full object-cover"
                   loading="lazy"

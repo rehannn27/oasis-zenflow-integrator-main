@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar, Palmtree } from "lucide-react";
+import BedroomImg from "../assets/Bedroom.png";
+import PitonsImg from "../assets/stlucia-pitons.jpg";
+import SceneryImg from "../assets/2.png";
+import SpringsImg from "../assets/17.png";
 
 export default function StLucia() {
   const amenities = [
@@ -53,19 +57,19 @@ export default function StLucia() {
           <h2 className="text-4xl font-bold mb-12 text-center">St. Lucia Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <img
-              src="/src/assets/Bedroom.png"
+              src={BedroomImg}
               alt="St. Lucia Cabin Bed"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src="/src/assets/stlucia-pitons.jpg"
+              src={PitonsImg}
               alt="Twin Pitons"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src="/src/assets/2.png"
+              src={SceneryImg}
               alt="Marigot Bay"
               className="w-full h-64 object-cover"
               loading="lazy"
@@ -116,7 +120,7 @@ export default function StLucia() {
               </CardHeader>
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/Bedroom.png"
+                  src={BedroomImg}
                   alt="St. Lucia cabin bed and amenities"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -207,7 +211,7 @@ export default function StLucia() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/stlucia-pitons.jpg"
+                  src={PitonsImg}
                   alt="Twin Pitons"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -221,7 +225,7 @@ export default function StLucia() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/17.png"
+                  src={SpringsImg}
                   alt="Sulphur Springs"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -235,7 +239,7 @@ export default function StLucia() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/2.png"
+                  src={SceneryImg}
                   alt="Marigot Bay"
                   className="h-full w-full object-cover"
                   loading="lazy"
