@@ -5,11 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, MapPin, Users, Mail, Phone, User } from "lucide-react";
+import { Calendar, MapPin, Users, Mail, Phone, User, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { databaseService, type Booking } from "@/lib/database";
 
 export default function Book() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,27 +24,60 @@ export default function Book() {
     specialRequests: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // This will be replaced with actual database integration
-    toast({
-      title: "Booking Request Received!",
-      description: "We'll contact you shortly to confirm your reservation.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      location: "",
-      accommodation: "",
-      checkIn: "",
-      checkOut: "",
-      guests: "",
-      specialRequests: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const bookingData: Omit<Booking, 'id' | 'status' | 'created_at' | 'updated_at'> = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        location: formData.location as 'atlanta' | 'stlucia',
+        accommodation: formData.accommodation,
+        check_in: formData.checkIn,
+        check_out: formData.checkOut,
+        guests: parseInt(formData.guests),
+        special_requests: formData.specialRequests || undefined,
+      };
+
+      const result = await databaseService.createBooking(bookingData);
+
+      if (result) {
+        toast({
+          title: "Booking Request Received!",
+          description: "We'll contact you shortly to confirm your reservation.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          location: "",
+          accommodation: "",
+          checkIn: "",
+          checkOut: "",
+          guests: "",
+          specialRequests: "",
+        });
+      } else {
+        toast({
+          title: "Booking Failed",
+          description: "Please try again or contact us directly.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error('Booking submission error:', error);
+      toast({
+        title: "Booking Failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: string, value: string) => {
@@ -205,9 +240,18 @@ export default function Book() {
 
               {/* Submit Button */}
               <div className="pt-4">
-                <Button type="submit" variant="hero" size="lg" className="w-full">
-                  <Calendar className="mr-2 h-5 w-5" />
-                  Submit Booking Request
+                <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Calendar className="mr-2 h-5 w-5" />
+                      Submit Booking Request
+                    </>
+                  )}
                 </Button>
                 <p className="text-sm text-muted-foreground text-center mt-4">
                   * We'll contact you to confirm availability and process payment securely

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import Atlanta from "./pages/Atlanta";
 import StLucia from "./pages/StLucia";
@@ -13,6 +14,7 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Book from "./pages/Book";
 import Admin from "./pages/Admin";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +35,11 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/book" element={<Book />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/dashboard" element={
+            <ProtectedRoute>
+              <AdminDashboard />
+            </ProtectedRoute>
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

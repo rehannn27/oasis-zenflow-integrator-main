@@ -55,16 +55,27 @@ export default function Atlanta() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-calm">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center gap-2 text-primary mb-4">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={Atlanta2}
+            alt="Atlanta wellness retreat exterior"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
+        </div>
+
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-2 text-primary mb-4">
             <MapPin className="h-5 w-5" />
             <span className="text-sm font-medium">Snellville, GA 30039 USA</span>
           </div>
-          <h1 className="text-5xl font-bold mb-6">Oasis of Calm Atlanta</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            Located in the suburbs of Atlanta, amidst lush foliage and a continuously flowing creek 
-            that beckons you to rest, reset and rejuvenate. Experience a peaceful sanctuary 
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Oasis of Calm <span className="bg-gradient-ocean bg-clip-text text-transparent">Atlanta</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            Located in the suburbs of Atlanta, amidst lush foliage and a continuously flowing creek
+            that beckons you to rest, reset and rejuvenate. Experience a peaceful sanctuary
             conveniently near Stone Mountain Park, theaters, restaurants, and shopping.
           </p>
         </div>
