@@ -208,42 +208,42 @@ export default function Atlanta() {
               <div className="relative h-48 bg-muted">
                 <img
                   src={AtlantaCreekside}
-                  alt="Stone Mountain Park"
+                  alt="Creekside Nature Trail"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Stone Mountain Park</h3>
-                <p className="text-sm text-muted-foreground">Historic park with hiking trails, laser shows, and family activities</p>
+                <h3 className="font-semibold mb-2">Creekside Nature Trail</h3>
+                <p className="text-sm text-muted-foreground">Serene walking paths along the flowing creek with beautiful scenery</p>
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
                   src={AtlantaSPA}
-                  alt="Atlanta Botanical Garden"
+                  alt="Wellness Center"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Atlanta Botanical Garden</h3>
-                <p className="text-sm text-muted-foreground">Beautiful gardens and conservatory with seasonal displays</p>
+                <h3 className="font-semibold mb-2">Wellness Center</h3>
+                <p className="text-sm text-muted-foreground">Holistic spa treatments and wellness classes for mind and body</p>
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
                   src={AtlantaSwing}
-                  alt="Centennial Olympic Park"
+                  alt="Relaxation Garden"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Centennial Olympic Park</h3>
-                <p className="text-sm text-muted-foreground">Downtown park with fountains, events, and city views</p>
+                <h3 className="font-semibold mb-2">Relaxation Garden</h3>
+                <p className="text-sm text-muted-foreground">Peaceful outdoor space with hammocks and meditation areas</p>
               </CardContent>
             </Card>
           </div>
