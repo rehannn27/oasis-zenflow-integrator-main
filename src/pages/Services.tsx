@@ -18,28 +18,16 @@ export default function Services() {
       offerings: ["Deep Cleansing Facial", "Anti-Aging Treatment", "Hydrating Facial", "Organic Facials"],
     },
     {
-      icon: Leaf,
-      title: "Body Treatments",
-      description: "Luxurious body treatments to detoxify and nourish",
-      offerings: ["Body Scrubs", "Body Wraps", "Detox Treatments", "Island Scrubs"],
-    },
-    {
       icon: Sparkles,
       title: "Aromatherapy",
       description: "Healing power of essential oils for mind and body wellness",
       offerings: ["Custom Blends", "Aromatherapy Sessions", "Essential Oil Therapy"],
     },
     {
-      icon: Dumbbell,
-      title: "Yoga & Meditation",
-      description: "Guided sessions for inner peace and physical wellness",
-      offerings: ["Beach Yoga (St. Lucia)", "Meditation Classes", "Private Sessions", "Group Classes"],
-    },
-    {
       icon: Heart,
       title: "Wellness Classes",
       description: "1-hour Body, Mind, and Spirit Wellness classes",
-      offerings: ["Holistic Wellness", "Guided Meditation", "Breathwork", "Mindfulness Training"],
+      offerings: ["Diet & Exercise", "Stress Management", "Holistic Wellness", "Life Coaching"],
     },
   ];
 

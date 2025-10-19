@@ -112,12 +112,13 @@ export default function Contact() {
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Atlanta Location</h3>
                     <p className="text-muted-foreground mb-2">
-                      Suburbs of Atlanta, GA<br />
+                      Snellville, GA 30039 USA<br />
                       Near Stone Mountain Park
                     </p>
-                    <p className="text-sm text-muted-foreground">
-                      Contact us for exact address and directions
-                    </p>
+                    <div className="flex items-center gap-2 text-primary">
+                      <Phone className="h-4 w-4" />
+                      <span className="font-medium">404-433-2899</span>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -133,12 +134,12 @@ export default function Contact() {
                   <div>
                     <h3 className="text-xl font-semibold mb-2">St. Lucia Location</h3>
                     <p className="text-muted-foreground mb-2">
-                      The Morne/LA Toc<br />
-                      St. Lucia, West Indies
+                      The Morne, St. Lucia WI<br />
+                      Caribbean Paradise
                     </p>
                     <div className="flex items-center gap-2 text-primary">
                       <Phone className="h-4 w-4" />
-                      <span className="font-medium">758.451.7375</span>
+                      <span className="font-medium">758-451-7375</span>
                     </div>
                   </div>
                 </div>
@@ -155,10 +156,10 @@ export default function Contact() {
                   <div>
                     <h3 className="text-xl font-semibold mb-2">Email Us</h3>
                     <a 
-                      href="mailto:oasiscalmholisticcenter@gmail.com"
+                      href="mailto:oasisofcalmholisticcenter@gmail.com"
                       className="text-primary hover:underline break-all"
                     >
-                      oasiscalmholisticcenter@gmail.com
+                      oasisofcalmholisticcenter@gmail.com
                     </a>
                     <p className="text-sm text-muted-foreground mt-2">
                       We typically respond within 24 hours
