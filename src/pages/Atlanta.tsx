@@ -16,6 +16,10 @@ import AtlantaLounge from "../assets/Lounge.png";
 import AtlantaReception from "../assets/Reception.png";
 import AtlantaSPA from "../assets/SPA Services.png";
 import AtlantaSwing from "../assets/Swing.png";
+import StoneMountain from "../assets/stonemountain.jpeg";
+import Aquarium from "../assets/aquarium.jpeg";
+import OlympicPark from "../assets/olympicpark.jpeg";
+import ZooEntrance from "../assets/zoo-entrance0-aba766b05056a36_aba767aa-5056-a36a-0907db80860b3e82-1.jpg";
 
 export default function Atlanta() {
   const accommodations = [
@@ -214,47 +218,61 @@ export default function Atlanta() {
       <section className="py-16 px-4 bg-gradient-sunset text-secondary-foreground">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-8 text-center">Nearby Attractions</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={AtlantaCreekside}
-                  alt="Creekside Nature Trail"
+                  src={StoneMountain}
+                  alt="Stone Mountain Park"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Creekside Nature Trail</h3>
-                <p className="text-sm text-muted-foreground">Serene walking paths along the flowing creek with beautiful scenery</p>
+                <h3 className="font-semibold mb-2">Stone Mountain Park</h3>
+                <p className="text-sm text-muted-foreground">Iconic mountain carving and family-friendly attractions</p>
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={AtlantaSPA}
-                  alt="Wellness Center"
+                  src={Aquarium}
+                  alt="Aquarium"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Wellness Center</h3>
-                <p className="text-sm text-muted-foreground">Holistic spa treatments and wellness classes for mind and body</p>
+                <h3 className="font-semibold mb-2">Aquarium</h3>
+                <p className="text-sm text-muted-foreground">Explore marine life and underwater wonders</p>
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={AtlantaSwing}
-                  alt="Relaxation Garden"
+                  src={ZooEntrance}
+                  alt="Zoo Entrance"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Relaxation Garden</h3>
-                <p className="text-sm text-muted-foreground">Peaceful outdoor space with hammocks and meditation areas</p>
+                <h3 className="font-semibold mb-2">Zoo Entrance</h3>
+                <p className="text-sm text-muted-foreground">Discover diverse animal exhibits and conservation efforts</p>
+              </CardContent>
+            </Card>
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+              <div className="relative h-48 bg-muted">
+                <img
+                  src={OlympicPark}
+                  alt="Olympic Park"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">Olympic Park</h3>
+                <p className="text-sm text-muted-foreground">Historic site of the 1996 Olympics with fountains and events</p>
               </CardContent>
             </Card>
           </div>

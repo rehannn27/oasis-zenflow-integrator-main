@@ -10,6 +10,11 @@ import StLuciaLivingRoom from "../assets/Living Room.png";
 import StLuciaKitchen from "../assets/Kitchen & Dining Room.png";
 import StLuciaBathroom from "../assets/Bathroom.png";
 import PitonsImg from "../assets/stlucia-pitons.jpg";
+import Cruize from "../assets/cruize.jpeg";
+import Mudbath from "../assets/mudbath.jpeg";
+import SulphurSpring from "../assets/sulphur spring.jpeg";
+import BambooRafting from "../assets/bamboo rafting.jpeg";
+import StLucia11 from "../assets/11.png";
 
 export default function StLucia() {
   const amenities = [
@@ -40,16 +45,27 @@ export default function StLucia() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-calm">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex items-center gap-2 text-primary mb-4">
+      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={StLucia11}
+            alt="St. Lucia wellness retreat exterior"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
+        </div>
+
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="flex items-center justify-center gap-2 text-primary mb-4">
             <Palmtree className="h-5 w-5" />
             <span className="text-sm font-medium">St. Lucia, Caribbean</span>
           </div>
-          <h1 className="text-5xl font-bold mb-6">Oasis of Calm St. Lucia</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-            With its romantic charm, lush rainforests, and the famous twin Pitons Mountain peaks, 
-            Saint Lucia is one of the Caribbean's most unique and captivating getaway spots. Experience 
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Oasis of Calm <span className="bg-gradient-ocean bg-clip-text text-transparent">St. Lucia</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            With its romantic charm, lush rainforests, and the famous twin Pitons Mountain peaks,
+            Saint Lucia is one of the Caribbean's most unique and captivating getaway spots. Experience
             paradise with breathtaking ocean views of the Caribbean Sea.
           </p>
         </div>
@@ -211,65 +227,61 @@ export default function StLucia() {
       <section className="py-16 px-4 bg-gradient-sunset text-secondary-foreground">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-8 text-center">Caribbean Attractions</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={PitonsImg}
-                  alt="Twin Pitons"
+                  src={Cruize}
+                  alt="Cruize"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Twin Pitons</h3>
-                <p className="text-sm text-muted-foreground">Iconic volcanic peaks and UNESCO World Heritage site</p>
+                <h3 className="font-semibold mb-2">Cruize</h3>
+                <p className="text-sm text-muted-foreground">Scenic boat tours and coastal adventures</p>
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={StLucia1}
-                  alt="Sulphur Springs"
+                  src={Mudbath}
+                  alt="Mudbath"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Sulphur Springs</h3>
-                <p className="text-sm text-muted-foreground">World's only drive-in volcano with therapeutic mud baths</p>
+                <h3 className="font-semibold mb-2">Mudbath</h3>
+                <p className="text-sm text-muted-foreground">Therapeutic volcanic mud baths for relaxation</p>
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={StLuciaSPATreatment}
-                  alt="Marigot Bay"
+                  src={SulphurSpring}
+                  alt="Sulphur Spring"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Marigot Bay</h3>
-                <p className="text-sm text-muted-foreground">Picturesque bay featured in movies, perfect for sailing</p>
+                <h3 className="font-semibold mb-2">Sulphur Spring</h3>
+                <p className="text-sm text-muted-foreground">Natural hot springs with healing mineral waters</p>
               </CardContent>
             </Card>
-            <Card className="text-center p-6">
-              <CardContent className="p-0">
-                <h3 className="font-semibold mb-2">Pigeon Island</h3>
-                <p className="text-sm text-muted-foreground">Historic national park with hiking trails and beaches</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6">
-              <CardContent className="p-0">
-                <h3 className="font-semibold mb-2">Diamond Falls</h3>
-                <p className="text-sm text-muted-foreground">Beautiful waterfall with mineral-rich waters</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center p-6">
-              <CardContent className="p-0">
-                <h3 className="font-semibold mb-2">Castries Market</h3>
-                <p className="text-sm text-muted-foreground">Vibrant local market with crafts, spices, and fresh produce</p>
+            <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+              <div className="relative h-48 bg-muted">
+                <img
+                  src={BambooRafting}
+                  alt="Bamboo Rafting"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">Bamboo Rafting</h3>
+                <p className="text-sm text-muted-foreground">Traditional bamboo rafting down rainforest rivers</p>
               </CardContent>
             </Card>
           </div>
