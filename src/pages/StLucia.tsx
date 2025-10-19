@@ -53,7 +53,7 @@ export default function StLucia() {
           <h2 className="text-4xl font-bold mb-12 text-center">St. Lucia Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <img
-              src="/src/assets/stlucia-cabin-bed.jpg"
+              src="/src/assets/Bedroom.png"
               alt="St. Lucia Cabin Bed"
               className="w-full h-64 object-cover"
               loading="lazy"
@@ -65,7 +65,7 @@ export default function StLucia() {
               loading="lazy"
             />
             <img
-              src="/src/assets/stlucia-marigot-bay.jpg"
+              src="/src/assets/2.png"
               alt="Marigot Bay"
               className="w-full h-64 object-cover"
               loading="lazy"
@@ -116,7 +116,7 @@ export default function StLucia() {
               </CardHeader>
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/stlucia-cabin-bed.jpg"
+                  src="/src/assets/Bedroom.png"
                   alt="St. Lucia cabin bed and amenities"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -221,7 +221,7 @@ export default function StLucia() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/stlucia-sulphur-springs.jpg"
+                  src="/src/assets/17.png"
                   alt="Sulphur Springs"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -235,7 +235,7 @@ export default function StLucia() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/stlucia-marigot-bay.jpg"
+                  src="/src/assets/2.png"
                   alt="Marigot Bay"
                   className="h-full w-full object-cover"
                   loading="lazy"

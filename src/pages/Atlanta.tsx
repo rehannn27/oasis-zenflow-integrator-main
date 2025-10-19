@@ -62,20 +62,20 @@ export default function Atlanta() {
           <h2 className="text-4xl font-bold mb-12 text-center">Atlanta Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <img
-              src="/src/assets/atlanta-luxury-suite-bed.jpg"
+              src="/src/assets/Bedroom.png"
               alt="Atlanta Luxury Suite"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src="/src/assets/atlanta-basement-retreat-bed.jpg"
+              src="/src/assets/Bedroom (2).png"
               alt="Atlanta Basement Retreat"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src="/src/assets/atlanta-botanical-garden.jpg"
-              alt="Atlanta Botanical Garden"
+              src="/src/assets/Living Room.png"
+              alt="Atlanta Living Space"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
@@ -123,7 +123,7 @@ export default function Atlanta() {
                 </CardHeader>
                 <div className="relative h-48 bg-muted">
                   <img
-                    src={index === 0 ? "/src/assets/atlanta-luxury-suite-bed.jpg" : "/src/assets/atlanta-basement-retreat-bed.jpg"}
+                    src={index === 0 ? "/src/assets/Bedroom.png" : "/src/assets/Bedroom (2).png"}
                     alt={`${room.title} bed and amenities`}
                     className="h-full w-full object-cover"
                     loading="lazy"
@@ -193,7 +193,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/atlanta-stone-mountain.jpg"
+                  src="/src/assets/Creekside.png"
                   alt="Stone Mountain Park"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -207,7 +207,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/atlanta-botanical-garden.jpg"
+                  src="/src/assets/Lounge.png"
                   alt="Atlanta Botanical Garden"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -221,7 +221,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src="/src/assets/atlanta-olympic-park.jpg"
+                  src="/src/assets/Swing.png"
                   alt="Centennial Olympic Park"
                   className="h-full w-full object-cover"
                   loading="lazy"
