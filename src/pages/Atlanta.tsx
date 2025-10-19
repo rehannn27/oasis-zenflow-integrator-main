@@ -2,12 +2,20 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar } from "lucide-react";
-import BedroomImg from "../assets/Bedroom.png";
-import Bedroom2Img from "../assets/Bedroom (2).png";
-import LivingRoomImg from "../assets/Living Room.png";
-import CreeksideImg from "../assets/Creekside.png";
-import LoungeImg from "../assets/Lounge.png";
-import SwingImg from "../assets/Swing.png";
+
+// ATLANTA IMAGES (all remaining files)
+import Atlanta2 from "../assets/2.png";
+import Atlanta11 from "../assets/11.png";
+import Atlanta17 from "../assets/17.png";
+import AtlantaBedroom from "../assets/Bedroom.png";
+import AtlantaBedroom2 from "../assets/Bedroom (2).png";
+import AtlantaCreekside from "../assets/Creekside.png";
+import AtlantaEating from "../assets/Eating patio.png";
+import AtlantaEntrance from "../assets/Entrance To Bedroom.png";
+import AtlantaLounge from "../assets/Lounge.png";
+import AtlantaReception from "../assets/Reception.png";
+import AtlantaSPA from "../assets/SPA Services.png";
+import AtlantaSwing from "../assets/Swing.png";
 
 export default function Atlanta() {
   const accommodations = [
@@ -68,20 +76,20 @@ export default function Atlanta() {
           <h2 className="text-4xl font-bold mb-12 text-center">Atlanta Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <img
-              src={BedroomImg}
+              src={AtlantaBedroom}
               alt="Atlanta Luxury Suite"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src={Bedroom2Img}
-              alt="Atlanta Basement Retreat"
+              src={AtlantaCreekside}
+              alt="Atlanta Creekside View"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src={LivingRoomImg}
-              alt="Atlanta Living Space"
+              src={AtlantaLounge}
+              alt="Atlanta Lounge"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
@@ -129,7 +137,7 @@ export default function Atlanta() {
                 </CardHeader>
                 <div className="relative h-48 bg-muted">
                   <img
-                    src={index === 0 ? BedroomImg : Bedroom2Img}
+                    src={index === 0 ? AtlantaBedroom : AtlantaBedroom2}
                     alt={`${room.title} bed and amenities`}
                     className="h-full w-full object-cover"
                     loading="lazy"
@@ -199,7 +207,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={CreeksideImg}
+                  src={AtlantaCreekside}
                   alt="Stone Mountain Park"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -213,7 +221,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={LoungeImg}
+                  src={AtlantaSPA}
                   alt="Atlanta Botanical Garden"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -227,7 +235,7 @@ export default function Atlanta() {
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
-                  src={SwingImg}
+                  src={AtlantaSwing}
                   alt="Centennial Olympic Park"
                   className="h-full w-full object-cover"
                   loading="lazy"
