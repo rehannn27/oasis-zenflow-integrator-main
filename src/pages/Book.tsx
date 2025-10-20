@@ -5,13 +5,18 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, MapPin, Users, Mail, Phone, User, Loader2 } from "lucide-react";
+import { Calendar, MapPin, Users, Mail, Phone, User, Loader2, CreditCard } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { databaseService, type Booking } from "@/lib/database";
+import { Elements } from '@stripe/react-stripe-js';
+import stripePromise from '@/lib/stripe';
+import PaymentForm from '@/components/PaymentForm';
 
 export default function Book() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentStep, setCurrentStep] = useState<'booking' | 'payment'>('booking');
+  const [bookingId, setBookingId] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,22 +49,11 @@ export default function Book() {
       const result = await databaseService.createBooking(bookingData);
 
       if (result) {
+        setBookingId(result.id);
+        setCurrentStep('payment');
         toast({
-          title: "Booking Request Received!",
-          description: "We'll contact you shortly to confirm your reservation.",
-        });
-
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          location: "",
-          accommodation: "",
-          checkIn: "",
-          checkOut: "",
-          guests: "",
-          specialRequests: "",
+          title: "Booking Details Saved!",
+          description: "Please complete your payment to confirm the reservation.",
         });
       } else {
         toast({
@@ -80,6 +74,66 @@ export default function Book() {
     }
   };
 
+  const handlePaymentSuccess = async (paymentIntent: any) => {
+    try {
+      // Update booking status to confirmed
+      if (bookingId) {
+        await databaseService.updateBookingStatus(bookingId, 'confirmed');
+      }
+
+      toast({
+        title: "Payment Successful!",
+        description: "Your booking has been confirmed. Check your email for details.",
+      });
+
+      // Reset form and go back to booking step
+      setCurrentStep('booking');
+      setBookingId(null);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        location: "",
+        accommodation: "",
+        checkIn: "",
+        checkOut: "",
+        guests: "",
+        specialRequests: "",
+      });
+    } catch (error) {
+      console.error('Payment confirmation error:', error);
+      toast({
+        title: "Payment Confirmed",
+        description: "Your payment was successful, but there was an issue updating your booking. Please contact us.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handlePaymentError = (error: string) => {
+    toast({
+      title: "Payment Failed",
+      description: error,
+      variant: "destructive",
+    });
+  };
+
+  const calculateAmount = () => {
+    // Simple pricing logic - you can make this more sophisticated
+    const baseRates = {
+      'suite': 82,
+      'basement': 125,
+      'cabin': 100,
+    };
+
+    const rate = baseRates[formData.accommodation as keyof typeof baseRates] || 100;
+    const checkIn = new Date(formData.checkIn);
+    const checkOut = new Date(formData.checkOut);
+    const nights = Math.max(1, Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 60 * 60 * 24)));
+
+    return rate * nights;
+  };
+
   const handleChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
@@ -95,17 +149,38 @@ export default function Book() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Reserve Your Stay</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Fill out the form below and we'll contact you to confirm your booking and process payment
+            {currentStep === 'booking'
+              ? "Fill out the form below to start your booking process"
+              : "Complete your payment to confirm your reservation"
+            }
           </p>
         </div>
 
+        {/* Step Indicator */}
+        <div className="flex justify-center mb-8">
+          <div className="flex items-center space-x-4">
+            <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
+              currentStep === 'booking' ? 'bg-primary text-white' : 'bg-primary/20 text-primary'
+            }`}>
+              1
+            </div>
+            <div className={`h-1 w-16 ${currentStep === 'payment' ? 'bg-primary' : 'bg-gray-200'}`}></div>
+            <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
+              currentStep === 'payment' ? 'bg-primary text-white' : 'bg-primary/20 text-primary'
+            }`}>
+              2
+            </div>
+          </div>
+        </div>
+
         {/* Booking Form */}
-        <Card className="shadow-[var(--shadow-soft)]">
-          <CardHeader className="bg-gradient-calm">
-            <CardTitle className="text-2xl">Booking Information</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6 md:p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+        {currentStep === 'booking' && (
+          <Card className="shadow-[var(--shadow-soft)]">
+            <CardHeader className="bg-gradient-calm">
+              <CardTitle className="text-2xl">Booking Information</CardTitle>
+            </CardHeader>
+            <CardContent className="p-6 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold flex items-center gap-2">
@@ -260,6 +335,20 @@ export default function Book() {
             </form>
           </CardContent>
         </Card>
+        )}
+
+        {/* Payment Form */}
+        {currentStep === 'payment' && (
+          <Elements stripe={stripePromise}>
+            <PaymentForm
+              amount={calculateAmount()}
+              currency="usd"
+              onSuccess={handlePaymentSuccess}
+              onError={handlePaymentError}
+              bookingData={formData}
+            />
+          </Elements>
+        )}
 
         {/* Info Cards */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
