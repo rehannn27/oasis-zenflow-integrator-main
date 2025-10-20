@@ -350,6 +350,17 @@ export default function Book() {
           </Elements>
         )}
 
+        {/* Debug Info */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mt-8 p-4 bg-gray-100 rounded-lg">
+            <h3 className="font-semibold mb-2">Debug Information:</h3>
+            <p>Stripe Key: {import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY ? 'Set' : 'Missing'}</p>
+            <p>Supabase URL: {import.meta.env.VITE_SUPABASE_URL ? 'Set' : 'Missing'}</p>
+            <p>Supabase Key: {import.meta.env.VITE_SUPABASE_ANON_KEY ? 'Set' : 'Missing'}</p>
+            <p>Calculated Amount: ${calculateAmount()}</p>
+          </div>
+        )}
+
         {/* Info Cards */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
           <Card className="text-center p-6">
