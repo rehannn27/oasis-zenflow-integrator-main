@@ -25,16 +25,18 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Peaceful wellness retreat" 
+          <img
+            src={heroImage}
+            alt="Peaceful wellness retreat"
             className="w-full h-full object-cover"
+            style={{
+              imageRendering: 'crisp-edges'
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
         </div>
         
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+          <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full mb-6 backdrop-blur-sm" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
             <Sparkles className="h-4 w-4" />
             <span className="text-sm font-medium">Premium Wellness Experience</span>
           </div>
@@ -43,7 +45,7 @@ export default function Home() {
             Restore Your <span className="bg-gradient-ocean bg-clip-text text-transparent">Balance</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white font-semibold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
             Experience tranquility at our Atlanta and St. Lucia locations. Book your personalized wellness journey today.
           </p>
           
@@ -54,8 +56,11 @@ export default function Home() {
                 Book Your Appointment
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8">
-              <Link to="/services">Explore Services</Link>
+            <Button asChild variant="hero" size="lg" className="text-lg px-8">
+              <Link to="/services">
+                <Sparkles className="mr-2 h-5 w-5" />
+                Explore Services
+              </Link>
             </Button>
           </div>
         </div>

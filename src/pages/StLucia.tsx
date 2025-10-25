@@ -6,14 +6,14 @@ import { MapPin, Users, Bed, Sparkles, Calendar, Palmtree } from "lucide-react";
 // ST. LUCIA IMAGES
 import StLucia1 from "../assets/1.png";
 import StLuciaSPATreatment from "../assets/SPA treatment.png";
-import StLuciaLivingRoom from "../assets/Living Room.png";
-import StLuciaKitchen from "../assets/Kitchen & Dining Room.png";
-import StLuciaBathroom from "../assets/Bathroom.png";
-import PitonsImg from "../assets/stlucia-pitons.jpg";
-import Cruize from "../assets/cruize.jpeg";
-import Mudbath from "../assets/mudbath.jpeg";
-import SulphurSpring from "../assets/sulphur spring.jpeg";
-import BambooRafting from "../assets/bamboo rafting.jpeg";
+import StLuciaLivingRoom from "../assets/stlucia/Living Room.png";
+import StLuciaKitchen from "../assets/stlucia/Kitchen & Dining Room.png";
+import StLuciaBathroom from "../assets/stlucia/Bathroom.png";
+import PitonsImg from "../assets/stlucia/stlucia-pitons.jpg";
+import Cruize from "../assets/stlucia/cruize.jpeg";
+import Mudbath from "../assets/stlucia/mudbath.jpeg";
+import SulphurSpring from "../assets/stlucia/sulphur spring.jpeg";
+import BambooRafting from "../assets/stlucia/bamboo rafting.jpeg";
 import StLucia11 from "../assets/11.png";
 
 export default function StLucia() {
@@ -52,18 +52,17 @@ export default function StLucia() {
             alt="St. Lucia wellness retreat exterior"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="flex items-center justify-center gap-2 text-primary mb-4">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+          <div className="flex items-center justify-center gap-2 text-white mb-4">
             <Palmtree className="h-5 w-5" />
             <span className="text-sm font-medium">St. Lucia, Caribbean</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Oasis of Calm <span className="bg-gradient-ocean bg-clip-text text-transparent">St. Lucia</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-white font-semibold" style={{ textShadow: '3px 3px 8px rgba(0,0,0,0.9)' }}>
             With its romantic charm, lush rainforests, and the famous twin Pitons Mountain peaks,
             Saint Lucia is one of the Caribbean's most unique and captivating getaway spots. Experience
             paradise with breathtaking ocean views of the Caribbean Sea.

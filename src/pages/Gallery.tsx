@@ -19,7 +19,7 @@ export default function Gallery() {
 
   // Local images fallback (auto-import everything in src/assets)
   const localImages = useMemo<GalleryImage[]>(() => {
-    const modules = import.meta.glob("/src/assets/*.{jpg,jpeg,png,webp}", {
+    const modules = import.meta.glob("/src/assets/**/*.{jpg,jpeg,png,webp}", {
       eager: true,
       // use query/import to avoid deprecation warning
       query: "?url",
@@ -44,12 +44,12 @@ export default function Gallery() {
         }
 
         const base = (path.split("/").pop() || "").toLowerCase();
-        const isNumbered = /^\d+\.(jpg|jpeg|png|webp)$/.test(base);
-        const looksLikeHouse = base.includes("house");
-        // Exclude generic/numbered/house images from the unified gallery
-        if (isNumbered || looksLikeHouse || category === "General") {
-          return null as unknown as GalleryImage;
-        }
+        // Include all images in the gallery, no exclusions
+        // const isNumbered = /^\d+\.(jpg|jpeg|png|webp)$/.test(base);
+        // const looksLikeHouse = base.includes("house");
+        // if (isNumbered || looksLikeHouse || category === "General") {
+        //   return null as unknown as GalleryImage;
+        // }
 
         return { src: url, title: humanizeFilename(path), category };
       })

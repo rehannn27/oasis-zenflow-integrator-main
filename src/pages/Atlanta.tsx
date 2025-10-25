@@ -4,22 +4,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar } from "lucide-react";
 
 // ATLANTA IMAGES (all remaining files)
-import Atlanta2 from "../assets/2.png";
+import AtlantaImage from "../assets/atlanta/atlannta.jpeg";
 import Atlanta11 from "../assets/11.png";
 import Atlanta17 from "../assets/17.png";
-import AtlantaBedroom from "../assets/Bedroom.png";
-import AtlantaBedroom2 from "../assets/Bedroom (2).png";
-import AtlantaCreekside from "../assets/Creekside.png";
-import AtlantaEating from "../assets/Eating patio.png";
-import AtlantaEntrance from "../assets/Entrance To Bedroom.png";
-import AtlantaLounge from "../assets/Lounge.png";
-import AtlantaReception from "../assets/Reception.png";
-import AtlantaSPA from "../assets/SPA Services.png";
-import AtlantaSwing from "../assets/Swing.png";
-import StoneMountain from "../assets/stonemountain.jpeg";
-import Aquarium from "../assets/aquarium.jpeg";
-import OlympicPark from "../assets/olympicpark.jpeg";
-import ZooEntrance from "../assets/zoo-entrance0-aba766b05056a36_aba767aa-5056-a36a-0907db80860b3e82-1.jpg";
+import AtlantaBedroom from "../assets/atlanta/Bedroom.png";
+import AtlantaBedroom2 from "../assets/atlanta/Bedroom (2).png";
+import AtlantaCreekside from "../assets/atlanta/Creekside.png";
+import AtlantaEating from "../assets/atlanta/Eating patio.png";
+import AtlantaEntrance from "../assets/atlanta/Entrance To Bedroom.png";
+import AtlantaLounge from "../assets/atlanta/Lounge.png";
+import AtlantaReception from "../assets/atlanta/Reception.png";
+import AtlantaSPA from "../assets/atlanta/SPA Services.png";
+import AtlantaSwing from "../assets/atlanta/Swing.png";
+import StoneMountain from "../assets/atlanta/stonemountain.jpeg";
+import Aquarium from "../assets/atlanta/aquarium.jpeg";
+import OlympicPark from "../assets/atlanta/olympicpark.jpeg";
+import ZooEntrance from "../assets/atlanta/zoo-entrance0-aba766b05056a36_aba767aa-5056-a36a-0907db80860b3e82-1.jpg";
 
 export default function Atlanta() {
   const accommodations = [
@@ -62,22 +62,24 @@ export default function Atlanta() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={Atlanta2}
+            src={AtlantaImage}
             alt="Atlanta wellness retreat exterior"
             className="w-full h-full object-cover"
+            style={{
+              imageRendering: 'crisp-edges'
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/50 to-background" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="flex items-center justify-center gap-2 text-primary mb-4">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+          <div className="flex items-center justify-center gap-2 text-white mb-4">
             <MapPin className="h-5 w-5" />
             <span className="text-sm font-medium">Snellville, GA 30039 USA</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             Oasis of Calm <span className="bg-gradient-ocean bg-clip-text text-transparent">Atlanta</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-white font-semibold" style={{ textShadow: '3px 3px 8px rgba(0,0,0,0.9)' }}>
             Located in the suburbs of Atlanta, amidst lush foliage and a continuously flowing creek
             that beckons you to rest, reset and rejuvenate. Experience a peaceful sanctuary
             conveniently near Stone Mountain Park, theaters, restaurants, and shopping.
