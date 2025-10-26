@@ -142,9 +142,9 @@ export default function Services() {
             <Card className="text-center p-8 border-2 border-primary/20">
               <CardContent className="p-0">
                 <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-semibold mb-3">Certified Therapists</h3>
+                <h3 className="text-xl font-semibold mb-3">Caribbean Cuisine</h3>
                 <p className="text-muted-foreground">
-                  All treatments performed by certified Holistic Wellness Therapists
+                  Authentic Caribbean cuisine available at St. Lucia location
                 </p>
               </CardContent>
             </Card>
