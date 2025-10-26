@@ -18,10 +18,10 @@ export default function Services() {
       offerings: ["Deep Cleansing Facial", "Anti-Aging Treatment", "Hydrating Facial", "Organic Facials"],
     },
     {
-      icon: Sparkles,
-      title: "Aromatherapy",
-      description: "Healing power of essential oils for mind and body wellness",
-      offerings: ["Custom Blends", "Aromatherapy Sessions", "Essential Oil Therapy"],
+      icon: Leaf,
+      title: "Food Detox Service",
+      description: "Natural detoxification through nutrition and healthy eating habits",
+      offerings: ["Nutritional Cleansing", "Detox Programs", "Healthy Meal Plans"],
     },
     {
       icon: Heart,
