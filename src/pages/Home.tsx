@@ -14,7 +14,7 @@ export default function Home() {
     },
     {
       title: "St. Lucia Paradise",
-      description: "Caribbean escape with breathtaking ocean views and tropical ambiance",
+      description: "Caribbean escape with breathtaking ocean views and tropical ambiance.",
       price: "From $100/night",
       link: "/st-lucia",
     },
