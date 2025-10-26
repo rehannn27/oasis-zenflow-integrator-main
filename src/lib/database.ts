@@ -16,6 +16,16 @@ export interface Booking {
   updated_at?: string;
 }
 
+export interface ContactMessage {
+  id?: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  status: 'unread' | 'read' | 'replied';
+  created_at?: string;
+}
+
 export interface AdminUser {
   id?: string;
   email: string;
@@ -78,6 +88,60 @@ class DatabaseService {
 
     if (error) {
       console.error('Error updating booking status:', error);
+      return false;
+    }
+
+    return true;
+  }
+
+  // Contact Messages
+  async createContactMessage(message: Omit<ContactMessage, 'id' | 'status' | 'created_at'>): Promise<ContactMessage | null> {
+    if (!this.supabase) return null;
+
+    const { data, error } = await this.supabase
+      .from('contact_messages')
+      .insert([{
+        ...message,
+        status: 'unread',
+        created_at: new Date().toISOString()
+      }])
+      .select()
+      .single();
+
+    if (error) {
+      console.error('Error creating contact message:', error);
+      return null;
+    }
+
+    return data;
+  }
+
+  async getContactMessages(): Promise<ContactMessage[]> {
+    if (!this.supabase) return [];
+
+    const { data, error } = await this.supabase
+      .from('contact_messages')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      console.error('Error fetching contact messages:', error);
+      return [];
+    }
+
+    return data || [];
+  }
+
+  async updateContactMessageStatus(id: string, status: ContactMessage['status']): Promise<boolean> {
+    if (!this.supabase) return false;
+
+    const { error } = await this.supabase
+      .from('contact_messages')
+      .update({ status })
+      .eq('id', id);
+
+    if (error) {
+      console.error('Error updating contact message status:', error);
       return false;
     }
 
