@@ -26,7 +26,7 @@ export default function Services() {
     {
       icon: Heart,
       title: "Wellness Classes",
-      description: "1-hour Body, Mind, and Spirit Wellness classes",
+      description: "Body, Mind, and Spirit Wellness classes",
       offerings: ["Diet & Exercise", "Stress Management", "Holistic Wellness", "Life Coaching"],
     },
   ];
