@@ -135,7 +135,7 @@ export default function Services() {
                 <Sparkles className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Complimentary Amenities</h3>
                 <p className="text-muted-foreground">
-                  Enjoy complimentary snacks, beverages, and a surprise SPA treatment for special occasions
+                  Enjoy complimentary snacks, beverages, a free wellness consultation and a SPA treatment for special occasions
                 </p>
               </CardContent>
             </Card>
