@@ -133,7 +133,7 @@ export default function Atlanta() {
                 </p>
                 <p>
                   Optional authentic Mediterranean cuisine and SPA services including sauna are available. 
-                  1-hour Body, Mind, and Spirit Wellness classes are presented by our certified on-site 
+                  Body, Mind, and Spirit Wellness classes are presented by our certified on-site 
                   Holistic Wellness Therapist.
                 </p>
               </div>
@@ -217,7 +217,7 @@ export default function Atlanta() {
         </div>
       </section>
 
-      {/* Nearby Attractions */}
+      {/* Atlanta Attractions */}
       <section className="py-16 px-4 bg-gradient-sunset text-secondary-foreground">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-8 text-center">Nearby Attractions</h2>
