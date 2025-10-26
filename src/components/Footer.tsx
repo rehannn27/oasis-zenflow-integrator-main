@@ -27,9 +27,8 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                <p>The Morne, St. Lucia WI
-                  Near Government House
-                </p>
+                <p>The Morne, St. Lucia WI<br />Near Government House</p>
+                
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
