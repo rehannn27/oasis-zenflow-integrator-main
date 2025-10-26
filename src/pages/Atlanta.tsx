@@ -72,13 +72,14 @@ export default function Atlanta() {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+          
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Oasis of Calm <span className="text-yellow-400">Atlanta</span>
+          </h1>
           <div className="flex items-center justify-center gap-2 text-white mb-4">
             <MapPin className="h-5 w-5" />
             <span className="text-sm font-medium">Snellville, GA 30039 USA</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Oasis of Calm <span className="text-white">Atlanta</span>
-          </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-white font-semibold" style={{ textShadow: '3px 3px 8px rgba(0,0,0,0.9)' }}>
             Located in the suburbs of Atlanta, amidst lush foliage and a continuously flowing creek
             that beckons you to rest, reset and rejuvenate. Experience a peaceful sanctuary
