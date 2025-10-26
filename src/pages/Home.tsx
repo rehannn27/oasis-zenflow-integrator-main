@@ -118,9 +118,15 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild variant="hero" size="lg">
               <Link to="/services">View All Services</Link>
+            </Button>
+            <Button asChild variant="hero" size="lg">
+              <Link to="/book">
+                <Calendar className="mr-2 h-5 w-5" />
+                Book Now
+              </Link>
             </Button>
           </div>
         </div>
