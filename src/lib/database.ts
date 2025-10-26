@@ -98,22 +98,22 @@ class DatabaseService {
   async createContactMessage(message: Omit<ContactMessage, 'id' | 'status' | 'created_at'>): Promise<ContactMessage | null> {
     if (!this.supabase) return null;
 
-    const { data, error } = await this.supabase
-      .from('contact_messages')
-      .insert([{
-        ...message,
-        status: 'unread',
-        created_at: new Date().toISOString()
-      }])
-      .select()
-      .single();
+    try {
+      // Call the Supabase Edge Function instead of direct database insert
+      const { data, error } = await this.supabase.functions.invoke('send-contact-email', {
+        body: message
+      })
 
-    if (error) {
-      console.error('Error creating contact message:', error);
-      return null;
+      if (error) {
+        console.error('Error sending contact message:', error)
+        return null
+      }
+
+      return data?.data || null
+    } catch (error) {
+      console.error('Error sending contact message:', error)
+      return null
     }
-
-    return data;
   }
 
   async getContactMessages(): Promise<ContactMessage[]> {
