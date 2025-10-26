@@ -105,8 +105,8 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
-            {["Massage Therapy", "Facial Treatments", "Aromatherapy", 
-              "Sauna & Jacuzzi", "Fitness Room"].map((service, index) => (
+            {["Massage Therapy", "Facial Treatments", "Food Spa", 
+               "Wellness classes"].map((service, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <CardContent className="p-0">
                   <div className="w-12 h-12 bg-gradient-ocean rounded-full mx-auto mb-3 flex items-center justify-center">
