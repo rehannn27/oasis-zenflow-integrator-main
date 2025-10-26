@@ -8,7 +8,7 @@ export default function Home() {
   const features = [
     {
       title: "Atlanta Sanctuary",
-      description: "Luxurious suite and modern basement retreat amidst lush foliage and flowing creek",
+      description: "Luxurious suite and modern basement retreat amidst lush foliage and flowing creek.",
       price: "From $82/night",
       link: "/atlanta",
     },
