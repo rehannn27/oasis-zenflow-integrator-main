@@ -27,7 +27,7 @@ export default function Services() {
       icon: Heart,
       title: "Wellness Classes",
       description: "Body, Mind, and Spirit Wellness classes",
-      offerings: ["Diet & Exercise", "Stress Management", "Holistic Wellness", "Life Coaching"],
+      offerings: ["Nutrition & Exercise", "Stress Management", "Personal Development", "Creative Expression"],
     },
   ];
 
