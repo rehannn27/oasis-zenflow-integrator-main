@@ -29,17 +29,20 @@ export default function StLucia() {
     "Private Balcony",
     "Ocean View",
     "Gazebo",
-    "SPA Services",
+    
   ];
 
   const services = [
+    "SPA Treatments",
+    "Authentic Caribbean Cuisine",
+    "SPA Services",
+  ];
+  const Premium = [
     "Airport Transfer",
     "Personal Shopper",
     "Tour Guide",
     "Excursions & Tours",
-    "SPA Treatments",
     "Premium Bath Amenities",
-    "Authentic Caribbean Cuisine",
   ];
 
   return (
@@ -55,13 +58,14 @@ export default function StLucia() {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+          
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Oasis of Calm <span className="bg-gradient-ocean bg-clip-text text-transparent">St. Lucia</span>
+          </h1>
           <div className="flex items-center justify-center gap-2 text-white mb-4">
             <Palmtree className="h-5 w-5" />
             <span className="text-sm font-medium">St. Lucia, Caribbean</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Oasis of Calm <span className="bg-gradient-ocean bg-clip-text text-transparent">St. Lucia</span>
-          </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-white font-semibold" style={{ textShadow: '3px 3px 8px rgba(0,0,0,0.9)' }}>
             With its romantic charm, lush rainforests, and the famous twin Pitons Mountain peaks,
             Saint Lucia is one of the Caribbean's most unique and captivating getaway spots. Experience
@@ -209,12 +213,24 @@ export default function StLucia() {
           </div>
 
           <h2 className="text-4xl font-bold mb-12 text-center">Onsite Services</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
             {services.map((service, index) => (
               <Card key={index} className="text-center p-4 hover:bg-gradient-calm transition-[var(--transition-smooth)]">
                 <CardContent className="p-0">
                   <Palmtree className="h-6 w-6 text-primary mx-auto mb-2" />
                   <p className="text-sm font-medium">{service}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <h2 className="text-4xl font-bold mb-12 text-center">Premium Services</h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {Premium.map((premium, index) => (
+              <Card key={index} className="text-center p-4 hover:bg-gradient-calm transition-[var(--transition-smooth)]">
+                <CardContent className="p-0">
+                  <Sparkles className="h-6 w-6 text-primary mx-auto mb-2" />
+                  <p className="text-sm font-medium">{premium}</p>
                 </CardContent>
               </Card>
             ))}
@@ -225,19 +241,19 @@ export default function StLucia() {
       {/* Attractions */}
       <section className="py-16 px-4 bg-gradient-sunset text-secondary-foreground">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold mb-8 text-center">Caribbean Attractions</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center">St Lucia Attractions</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
               <div className="relative h-48 bg-muted">
                 <img
                   src={Cruize}
-                  alt="Cruize"
+                  alt="Cruise"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Cruize</h3>
+                <h3 className="font-semibold mb-2">Cruise</h3>
                 <p className="text-sm text-muted-foreground">Scenic boat tours and coastal adventures</p>
               </CardContent>
             </Card>
