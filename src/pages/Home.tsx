@@ -53,7 +53,7 @@ export default function Home() {
             <Button asChild variant="hero" size="lg" className="text-lg px-8">
               <Link to="/book">
                 <Calendar className="mr-2 h-5 w-5" />
-                Book Your Appointment
+                Book Your Stay
               </Link>
             </Button>
             <Button asChild variant="hero" size="lg" className="text-lg px-8">
