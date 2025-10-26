@@ -1,6 +1,7 @@
-# TODO: Optimize Wellness Website
+# TODO: Replace Atlanta Hero Image
 
 ## Steps to Complete
-- [x] Improve hero section overlays in Home, Atlanta, and St. Lucia pages for better text readability
-- [x] Update Gallery page to display all photos from src/assets instead of filtering them out
-- [x] Test the changes by running the development server and verifying improvements
+- [x] Update import in src/pages/Atlanta.tsx to use newat.jpeg instead of atlannta.jpeg
+- [x] Verify that newat.jpeg exists in src/assets/atlanta/ folder
+- [x] Test the Atlanta page to ensure the new hero image loads correctly
+- [x] Change "Atlanta" text color to white in the hero section

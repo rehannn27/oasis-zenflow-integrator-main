@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar } from "lucide-react";
 
 // ATLANTA IMAGES (all remaining files)
-import AtlantaImage from "../assets/atlanta/atlannta.jpeg";
+import AtlantaImage from "../assets/atlanta/newat.jpeg";
 import Atlanta11 from "../assets/11.png";
 import Atlanta17 from "../assets/17.png";
 import AtlantaBedroom from "../assets/atlanta/Bedroom.png";
@@ -77,7 +77,7 @@ export default function Atlanta() {
             <span className="text-sm font-medium">Snellville, GA 30039 USA</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Oasis of Calm <span className="bg-gradient-ocean bg-clip-text text-transparent">Atlanta</span>
+            Oasis of Calm <span className="text-white">Atlanta</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-white font-semibold" style={{ textShadow: '3px 3px 8px rgba(0,0,0,0.9)' }}>
             Located in the suburbs of Atlanta, amidst lush foliage and a continuously flowing creek
