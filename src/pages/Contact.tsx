@@ -159,7 +159,7 @@ export default function Contact() {
                     <h3 className="text-xl font-semibold mb-2">St. Lucia Location</h3>
                     <p className="text-muted-foreground mb-2">
                       The Morne, St. Lucia WI<br />
-                      Caribbean Paradise
+                      Near Government House
                     </p>
                     <div className="flex items-center gap-2 text-primary">
                       <Phone className="h-4 w-4" />
