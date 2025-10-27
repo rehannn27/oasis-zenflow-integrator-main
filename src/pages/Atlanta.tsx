@@ -16,10 +16,10 @@ import AtlantaLounge from "../assets/atlanta/Lounge.png";
 import AtlantaReception from "../assets/atlanta/Reception.png";
 import AtlantaSPA from "../assets/atlanta/SPA Services.png";
 import AtlantaSwing from "../assets/atlanta/Swing.png";
-import StoneMountain from "../assets/atlanta/stonemountain.jpeg";
+import StoneMountain from "../assets/atlanta/Stone Mountain.jpeg";
 import Aquarium from "../assets/atlanta/aquarium.jpeg";
-import OlympicPark from "../assets/atlanta/olympicpark.jpeg";
-import ZooEntrance from "../assets/atlanta/zoo-entrance0-aba766b05056a36_aba767aa-5056-a36a-0907db80860b3e82-1.jpg";
+import OlympicPark from "../assets/atlanta/Olympic Park.jpeg";
+import ZooEntrance from "../assets/atlanta/Atlanta zoo.jpg";
 
 export default function Atlanta() {
   const accommodations = [

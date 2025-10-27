@@ -10,7 +10,7 @@ import StLuciaLivingRoom from "../assets/stlucia/Living Room.png";
 import StLuciaKitchen from "../assets/stlucia/Kitchen & Dining Room.png";
 import StLuciaBathroom from "../assets/stlucia/Bathroom.png";
 import PitonsImg from "../assets/stlucia/st-lucia-pitons.jpg";
-import Cruize from "../assets/stlucia/cruize.jpeg";
+import Cruize from "../assets/stlucia/cruise.jpeg";
 import Mudbath from "../assets/stlucia/mudbath.jpeg";
 import SulphurSpring from "../assets/stlucia/sulphur spring.jpeg";
 import BambooRafting from "../assets/stlucia/bamboo rafting.jpeg";
