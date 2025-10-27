@@ -155,7 +155,7 @@ export default function Atlanta() {
                 </CardHeader>
                 <div className="relative h-48 bg-muted">
                   <img
-                    src={index === 0 ? AtlantaBedroom : AtlantaBedroom2}
+                    src={index === 0 ? AtlantaSPA : AtlantaReception}
                     alt={`${room.title} bed and amenities`}
                     className="h-full w-full object-cover"
                     loading="lazy"
