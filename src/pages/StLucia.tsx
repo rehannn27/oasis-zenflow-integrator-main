@@ -9,7 +9,7 @@ import StLuciaSPATreatment from "../assets/SPA treatment.png";
 import StLuciaLivingRoom from "../assets/stlucia/Living Room.png";
 import StLuciaKitchen from "../assets/stlucia/Kitchen & Dining Room.png";
 import StLuciaBathroom from "../assets/stlucia/Bathroom.png";
-import PitonsImg from "../assets/stlucia/stlucia-pitons.jpg";
+import PitonsImg from "../assets/stlucia/st-lucia-pitons.jpg";
 import Cruize from "../assets/stlucia/cruize.jpeg";
 import Mudbath from "../assets/stlucia/mudbath.jpeg";
 import SulphurSpring from "../assets/stlucia/sulphur spring.jpeg";
