@@ -19,7 +19,7 @@ import AtlantaSwing from "../assets/atlanta/Atlanta12.jpeg";
 import StoneMountain from "../assets/atlanta/Stone Mountain.jpeg";
 import Aquarium from "../assets/atlanta/aquarium.jpeg";
 import OlympicPark from "../assets/atlanta/Olympic Park.jpeg";
-import ZooEntrance from "../assets/atlanta/Atlanta zoo.jpg";
+import ZooEntrance from "../assets/atlanta/Atlanta zoo.jpeg";
 
 export default function Atlanta() {
   const accommodations = [
