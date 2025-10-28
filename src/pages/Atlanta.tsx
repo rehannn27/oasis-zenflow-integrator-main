@@ -4,18 +4,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar } from "lucide-react";
 
 // ATLANTA IMAGES (using Atlanta1.jpeg to Atlanta13.jpeg)
-import AtlantaImage from "../assets/atlanta/new-atlanta.jpeg";
+import AtlantaImage from "../assets/atlanta/Atlanta1.jpeg";
 import Atlanta11 from "../assets/atlanta/Atlanta2.jpeg";
 import Atlanta17 from "../assets/atlanta/Atlanta3.jpeg";
-import AtlantaBedroom from "../assets/atlanta/Atlanta4.jpeg";
+import AtlantaBedroom from "../assets/atlanta/Amenities/Bedroom.png";
 import AtlantaBedroom2 from "../assets/atlanta/Atlanta5.jpeg";
-import AtlantaCreekside from "../assets/atlanta/Atlanta6.jpeg";
+import AtlantaCreekside from "../assets/atlanta/Amenities/Creekside.png";
 import AtlantaEating from "../assets/atlanta/Atlanta7.jpeg";
-import AtlantaEntrance from "../assets/atlanta/Atlanta8.jpeg";
-import AtlantaLounge from "../assets/atlanta/Atlanta9.jpeg";
-import AtlantaReception from "../assets/atlanta/Atlanta10.jpeg";
+import AtlantaEntrance from "../assets/atlanta/Amenities/Entrance To Bedroom.png";
+import AtlantaLounge from "../assets/atlanta/Amenities/Lounge.png";
+import AtlantaReception from "../assets/atlanta/Amenities/Reception.png";
 import AtlantaSPA from "../assets/atlanta/Atlanta11.jpeg";
-import AtlantaSwing from "../assets/atlanta/Atlanta12.jpeg";
+import AtlantaSwing from "../assets/atlanta/Amenities/Swing.png";
 import StoneMountain from "../assets/atlanta/Atlanta Attractions/Stone Mountain.jpeg";
 import Aquarium from "../assets/atlanta/Atlanta Attractions/Aquarium.jpeg";
 import OlympicPark from "../assets/atlanta/Atlanta Attractions/Olympic Park.jpeg";
