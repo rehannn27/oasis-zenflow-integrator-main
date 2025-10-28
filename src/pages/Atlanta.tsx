@@ -17,6 +17,7 @@ import AtlantaReception from "../assets/atlanta/Amenities/Reception.png";
 import AtlantaSPA from "../assets/atlanta/Atlanta11.jpeg";
 import AtlantaSwing from "../assets/atlanta/Amenities/Swing.png";
 import SPAServices from "../assets/atlanta/Amenities/SPA Services.png";
+import Atlanta13 from "../assets/atlanta/Atlanta13.jpeg";
 import StoneMountain from "../assets/atlanta/Atlanta Attractions/Stone Mountain.jpeg";
 import Aquarium from "../assets/atlanta/Atlanta Attractions/Aquarium.jpeg";
 import OlympicPark from "../assets/atlanta/Atlanta Attractions/Olympic Park.jpeg";
@@ -156,7 +157,7 @@ export default function Atlanta() {
                 </CardHeader>
                 <div className="relative h-48 bg-muted">
                   <img
-                    src={index === 0 ? AtlantaSPA : AtlantaReception}
+                    src={index === 0 ? Atlanta13 : AtlantaReception}
                     alt={`${room.title} bed and amenities`}
                     className="h-full w-full object-cover"
                     loading="lazy"
