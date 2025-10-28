@@ -80,20 +80,20 @@ export default function StLucia() {
           <h2 className="text-4xl font-bold mb-12 text-center">St. Lucia Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <img
+              src={Cruize}
+              alt="St. Lucia Cruise"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <img
               src={StLuciaLivingRoom}
               alt="St. Lucia Living Room"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src={PitonsImg}
-              alt="Twin Pitons"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <img
-              src={StLuciaKitchen}
-              alt="St. Lucia Kitchen"
+              src={BambooRafting}
+              alt="St. Lucia Bamboo Rafting"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
