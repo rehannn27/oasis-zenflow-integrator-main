@@ -16,6 +16,7 @@ import AtlantaLounge from "../assets/atlanta/Amenities/Lounge.png";
 import AtlantaReception from "../assets/atlanta/Amenities/Reception.png";
 import AtlantaSPA from "../assets/atlanta/Atlanta11.jpeg";
 import AtlantaSwing from "../assets/atlanta/Amenities/Swing.png";
+import SPAServices from "../assets/atlanta/Amenities/SPA Services.png";
 import StoneMountain from "../assets/atlanta/Atlanta Attractions/Stone Mountain.jpeg";
 import Aquarium from "../assets/atlanta/Atlanta Attractions/Aquarium.jpeg";
 import OlympicPark from "../assets/atlanta/Atlanta Attractions/Olympic Park.jpeg";
@@ -94,19 +95,19 @@ export default function Atlanta() {
           <h2 className="text-4xl font-bold mb-12 text-center">Atlanta Gallery</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <img
-              src={AtlantaBedroom}
+              src={AtlantaSPA}
               alt="Atlanta Luxury Suite"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src={AtlantaCreekside}
+              src={Atlanta11}
               alt="Atlanta Creekside View"
               className="w-full h-64 object-cover"
               loading="lazy"
             />
             <img
-              src={AtlantaLounge}
+              src={SPAServices}
               alt="Atlanta Lounge"
               className="w-full h-64 object-cover"
               loading="lazy"
