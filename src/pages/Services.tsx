@@ -106,10 +106,10 @@ export default function Services() {
       </section>
 
       {/* Facilities */}
-      <section className="py-16 px-4 bg-gradient-calm">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-4xl font-bold mb-12 text-center">Premium Facilities</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="py-20 px-4 bg-gradient-calm">
+        <div className="container mx-auto max-w-7xl">
+          <h2 className="text-4xl font-bold mb-16 text-center">Premium Facilities</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {facilities.map((facility, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <CardContent className="p-0">
