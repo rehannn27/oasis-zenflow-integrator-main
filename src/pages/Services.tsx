@@ -29,14 +29,15 @@ export default function Services() {
       description: "Body, Mind, and Spirit Wellness classes",
       offerings: ["Nutrition & Exercise", "Stress Management", "Personal Development", "Creative Expression"],
     },
+    {
+      icon: Dumbbell,
+      title: "Sauna",
+      description: "Traditional sauna for detoxification and relaxation",
+      offerings: ["Traditional Sauna", "Infrared Therapy", "Herbal Infusions", "Relaxation Sessions"],
+    },
   ];
 
   const facilities = [
-    {
-      title: "Sauna",
-      description: "Traditional sauna for detoxification and relaxation",
-      location: "Atlanta",
-    },
     {
       title: "Jacuzzi",
       description: "Private jacuzzi in luxury suite",
