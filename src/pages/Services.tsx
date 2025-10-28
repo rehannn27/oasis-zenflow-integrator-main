@@ -19,7 +19,7 @@ export default function Services() {
     },
     {
       icon: Leaf,
-      title: "Food Detox Service",
+      title: "Nutritional Detox",
       description: "Natural detoxification through nutrition and healthy eating habits",
       offerings: ["Nutritional Cleansing", "Detox Programs", "Healthy Meal Plans"],
     },
