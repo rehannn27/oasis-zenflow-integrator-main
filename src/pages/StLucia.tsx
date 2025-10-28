@@ -15,6 +15,7 @@ import Mudbath from "../assets/stlucia/mudbath.jpeg";
 import SulphurSpring from "../assets/stlucia/sulphur spring.jpeg";
 import BambooRafting from "../assets/stlucia/bamboo rafting.jpeg";
 import StLucia11 from "../assets/11.png";
+import Bedroom from "../assets/atlanta/Amenities/Bedroom.png";
 
 export default function StLucia() {
   const amenities = [
@@ -143,8 +144,8 @@ export default function StLucia() {
               </CardHeader>
               <div className="relative h-48 bg-muted">
                 <img
-                  src={StLuciaLivingRoom}
-                  alt="St. Lucia cabin living room"
+                  src={Bedroom}
+                  alt="St. Lucia cabin bedroom"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
