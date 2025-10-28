@@ -118,34 +118,167 @@ export default function Gallery() {
         {["Atlanta", "St. Lucia"].map((location) => {
           const locationImages = images.filter(img => img.category === location);
           if (locationImages.length === 0) return null;
-          
+
           return (
             <div key={location} className="mb-16">
               <h2 className="text-3xl font-bold mb-8 text-center">
                 {location === "General" ? "General Gallery" : `${location} Location`}
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {locationImages.map((img, index) => (
-                  <Card
-                    key={`${img.src}-${index}`}
-                    className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
-                  >
-                    <div className="relative h-64 bg-muted">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={img.src}
-                        alt={img.title}
-                        className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-base font-semibold">{img.title}</h3>
-                      <span className="text-xs text-primary">{img.category}</span>
-                    </div>
-                  </Card>
-                ))}
-              </div>
+
+              {location === "Atlanta" ? (
+                // Special handling for Atlanta with subcategories
+                <>
+                  {/* Atlanta Attractions */}
+                  {(() => {
+                    const attractionsImages = locationImages.filter(img =>
+                      img.title.toLowerCase().includes('aquarium') ||
+                      img.title.toLowerCase().includes('zoo') ||
+                      img.title.toLowerCase().includes('olympic') ||
+                      img.title.toLowerCase().includes('stone mountain')
+                    );
+                    if (attractionsImages.length === 0) return null;
+                    return (
+                      <div className="mb-12">
+                        <h3 className="text-2xl font-semibold mb-6 text-center">Atlanta Attractions</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {attractionsImages.map((img, index) => (
+                            <Card
+                              key={`${img.src}-${index}`}
+                              className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+                            >
+                              <div className="relative h-64 bg-muted">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={img.src}
+                                  alt={img.title}
+                                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <h3 className="text-base font-semibold">{img.title}</h3>
+                                <span className="text-xs text-primary">Atlanta Attractions</span>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* Atlanta Amenities */}
+                  {(() => {
+                    const amenitiesImages = locationImages.filter(img =>
+                      img.title.toLowerCase().includes('bedroom') ||
+                      img.title.toLowerCase().includes('creekside') ||
+                      img.title.toLowerCase().includes('eating patio') ||
+                      img.title.toLowerCase().includes('entrance') ||
+                      img.title.toLowerCase().includes('lounge') ||
+                      img.title.toLowerCase().includes('reception') ||
+                      img.title.toLowerCase().includes('spa services') ||
+                      img.title.toLowerCase().includes('swing')
+                    );
+                    if (amenitiesImages.length === 0) return null;
+                    return (
+                      <div className="mb-12">
+                        <h3 className="text-2xl font-semibold mb-6 text-center">Amenities</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {amenitiesImages.map((img, index) => (
+                            <Card
+                              key={`${img.src}-${index}`}
+                              className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+                            >
+                              <div className="relative h-64 bg-muted">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={img.src}
+                                  alt={img.title}
+                                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <h3 className="text-base font-semibold">{img.title}</h3>
+                                <span className="text-xs text-primary">Amenities</span>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* Other Atlanta Images */}
+                  {(() => {
+                    const otherImages = locationImages.filter(img =>
+                      !img.title.toLowerCase().includes('aquarium') &&
+                      !img.title.toLowerCase().includes('zoo') &&
+                      !img.title.toLowerCase().includes('olympic') &&
+                      !img.title.toLowerCase().includes('stone mountain') &&
+                      !img.title.toLowerCase().includes('bedroom') &&
+                      !img.title.toLowerCase().includes('creekside') &&
+                      !img.title.toLowerCase().includes('eating patio') &&
+                      !img.title.toLowerCase().includes('entrance') &&
+                      !img.title.toLowerCase().includes('lounge') &&
+                      !img.title.toLowerCase().includes('reception') &&
+                      !img.title.toLowerCase().includes('spa services') &&
+                      !img.title.toLowerCase().includes('swing')
+                    );
+                    if (otherImages.length === 0) return null;
+                    return (
+                      <div className="mb-12">
+                        <h3 className="text-2xl font-semibold mb-6 text-center">Property Views</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                          {otherImages.map((img, index) => (
+                            <Card
+                              key={`${img.src}-${index}`}
+                              className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+                            >
+                              <div className="relative h-64 bg-muted">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={img.src}
+                                  alt={img.title}
+                                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <h3 className="text-base font-semibold">{img.title}</h3>
+                                <span className="text-xs text-primary">Property Views</span>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </>
+              ) : (
+                // Default grid for other locations
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {locationImages.map((img, index) => (
+                    <Card
+                      key={`${img.src}-${index}`}
+                      className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+                    >
+                      <div className="relative h-64 bg-muted">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={img.src}
+                          alt={img.title}
+                          className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <h3 className="text-base font-semibold">{img.title}</h3>
+                        <span className="text-xs text-primary">{img.category}</span>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              )}
             </div>
           );
         })}
