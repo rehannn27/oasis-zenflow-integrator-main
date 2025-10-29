@@ -32,7 +32,7 @@ export default function Book() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
+  
     try {
       const bookingData: Omit<Booking, 'id' | 'status' | 'created_at' | 'updated_at'> = {
         name: formData.name,
@@ -45,10 +45,27 @@ export default function Book() {
         guests: parseInt(formData.guests),
         special_requests: formData.specialRequests || undefined,
       };
-
+  
       const result = await databaseService.createBooking(bookingData);
-
+  
       if (result) {
+        // ✅ NEW: Send email notification
+        await fetch('/api/send-booking-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            location: formData.location,
+            accommodation: formData.accommodation,
+            checkIn: formData.checkIn,
+            checkOut: formData.checkOut,
+            guests: formData.guests,
+            specialRequests: formData.specialRequests,
+          }),
+        });
+  
         setBookingId(result.id);
         setCurrentStep('payment');
         toast({
