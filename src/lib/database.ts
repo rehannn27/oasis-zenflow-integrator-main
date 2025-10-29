@@ -99,20 +99,58 @@ class DatabaseService {
     if (!this.supabase) return null;
 
     try {
-      // Call the Supabase Edge Function instead of direct database insert
+      // Try to call the Supabase Edge Function first
       const { data, error } = await this.supabase.functions.invoke('send-contact-email', {
         body: message
       })
 
       if (error) {
-        console.error('Error sending contact message:', error)
-        return null
+        console.error('Error sending contact message via Edge Function:', error)
+        // Fallback to direct database insert if Edge Function fails
+        console.log('Falling back to direct database insert...')
+        const { data: dbData, error: dbError } = await this.supabase
+          .from('contact_messages')
+          .insert([{
+            ...message,
+            status: 'unread',
+            created_at: new Date().toISOString()
+          }])
+          .select()
+          .single()
+
+        if (dbError) {
+          console.error('Error inserting contact message to database:', dbError)
+          return null
+        }
+
+        return dbData
       }
 
       return data?.data || null
     } catch (error) {
       console.error('Error sending contact message:', error)
-      return null
+      // Final fallback - try direct database insert
+      try {
+        const { data: dbData, error: dbError } = await this.supabase
+          .from('contact_messages')
+          .insert([{
+            ...message,
+            status: 'unread',
+            created_at: new Date().toISOString()
+          }])
+          .select()
+          .single()
+
+        if (dbError) {
+          console.error('Error inserting contact message to database (fallback):', dbError)
+          return null
+        }
+
+        return dbData
+      } catch (fallbackError) {
+        console.error('All contact message methods failed:', fallbackError)
+        return null
+      }
     }
   }
 
