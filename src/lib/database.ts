@@ -98,59 +98,28 @@ class DatabaseService {
   async createContactMessage(message: Omit<ContactMessage, 'id' | 'status' | 'created_at'>): Promise<ContactMessage | null> {
     if (!this.supabase) return null;
 
+    // Direct database insert - most reliable approach
     try {
-      // Try to call the Supabase Edge Function first
-      const { data, error } = await this.supabase.functions.invoke('send-contact-email', {
-        body: message
-      })
+      const { data: dbData, error: dbError } = await this.supabase
+        .from('contact_messages')
+        .insert([{
+          ...message,
+          status: 'unread',
+          created_at: new Date().toISOString()
+        }])
+        .select()
+        .single()
 
-      if (error) {
-        console.error('Error sending contact message via Edge Function:', error)
-        // Fallback to direct database insert if Edge Function fails
-        console.log('Falling back to direct database insert...')
-        const { data: dbData, error: dbError } = await this.supabase
-          .from('contact_messages')
-          .insert([{
-            ...message,
-            status: 'unread',
-            created_at: new Date().toISOString()
-          }])
-          .select()
-          .single()
-
-        if (dbError) {
-          console.error('Error inserting contact message to database:', dbError)
-          return null
-        }
-
-        return dbData
-      }
-
-      return data?.data || null
-    } catch (error) {
-      console.error('Error sending contact message:', error)
-      // Final fallback - try direct database insert
-      try {
-        const { data: dbData, error: dbError } = await this.supabase
-          .from('contact_messages')
-          .insert([{
-            ...message,
-            status: 'unread',
-            created_at: new Date().toISOString()
-          }])
-          .select()
-          .single()
-
-        if (dbError) {
-          console.error('Error inserting contact message to database (fallback):', dbError)
-          return null
-        }
-
-        return dbData
-      } catch (fallbackError) {
-        console.error('All contact message methods failed:', fallbackError)
+      if (dbError) {
+        console.error('Error inserting contact message to database:', dbError)
         return null
       }
+
+      console.log('Contact message saved successfully to database')
+      return dbData
+    } catch (error) {
+      console.error('Error saving contact message:', error)
+      return null
     }
   }
 
