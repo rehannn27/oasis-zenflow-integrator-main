@@ -4,21 +4,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar } from "lucide-react";
 
 // ATLANTA IMAGES (using Atlanta1.jpeg to Atlanta13.jpeg)
-import AtlantaImage from "../assets/atlanta/Atlanta1.jpeg";
-import Atlanta11 from "../assets/atlanta/Atlanta2.jpeg";
-import Atlanta17 from "../assets/atlanta/Atlanta3.jpeg";
+import AtlantaHeroImage from "../assets/atlanta/pls.jpg";
+import AtlantaCreeksideView from "../assets/atlanta/AtlantaCreeksideView.jpeg";
+import AtlantaExterior from "../assets/atlanta/AtlantaExterior.jpeg";
 import AtlantaBedroom from "../assets/atlanta/Amenities/Bedroom.png";
-import AtlantaBedroom2 from "../assets/atlanta/Atlanta5.jpeg";
+import AtlantaBedroom2 from "../assets/atlanta/AtlantaBedroomView.jpeg";
 import AtlantaCreekside from "../assets/atlanta/Amenities/Creekside.png";
-import AtlantaEating from "../assets/atlanta/Atlanta7.jpeg";
+import AtlantaDining from "../assets/atlanta/AtlantaDiningArea.jpeg";
 import AtlantaEntrance from "../assets/atlanta/Amenities/Entrance To Bedroom.png";
 import AtlantaLounge from "../assets/atlanta/Amenities/Lounge.png";
 import AtlantaReception from "../assets/atlanta/Amenities/Reception.png";
-import AtlantaSPA from "../assets/atlanta/Atlanta11.jpeg";
+import AtlantaLuxurySuite from "../assets/atlanta/AtlantaLuxurySuite.jpeg";
 import AtlantaSwing from "../assets/atlanta/Amenities/Swing.png";
-import SPAServices from "../assets/atlanta/Amenities/SPA Services.png";
-import Atlanta13 from "../assets/atlanta/Atlanta13.jpeg";
-import Bedroom from "../assets/atlanta/Amenities/Bedroom.png";
+import AtlantaSpaServices from "../assets/atlanta/Amenities/SPA Services.png";
+import AtlantaSuiteBedroom from "../assets/atlanta/AtlantaSuiteBedroom.jpeg";
+import AtlantaBedroomAmenity from "../assets/atlanta/Amenities/Bedroom.png";
 import StoneMountain from "../assets/atlanta/Atlanta Attractions/Stone Mountain.jpeg";
 import Aquarium from "../assets/atlanta/Atlanta Attractions/Aquarium.jpeg";
 import OlympicPark from "../assets/atlanta/Atlanta Attractions/Olympic Park.jpeg";
@@ -65,7 +65,7 @@ export default function Atlanta() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={AtlantaImage}
+            src={AtlantaHeroImage}
             alt="Atlanta wellness retreat exterior"
             className="w-full h-full object-cover"
             style={{
@@ -95,25 +95,170 @@ export default function Atlanta() {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center">Atlanta Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <img
-              src={AtlantaSPA}
-              alt="Atlanta Luxury Suite"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <img
-              src={Atlanta11}
-              alt="Atlanta Creekside View"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <img
-              src={SPAServices}
-              alt="Atlanta Lounge"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
+
+          {/* Amenities Gallery */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-semibold mb-8 text-center">Amenities</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={AtlantaBedroom}
+                    alt="Atlanta Bedroom"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Bedroom</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={AtlantaCreekside}
+                    alt="Atlanta Creekside"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Creekside</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={AtlantaEntrance}
+                    alt="Atlanta Entrance"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Entrance</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={AtlantaLounge}
+                    alt="Atlanta Lounge"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Lounge</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={AtlantaReception}
+                    alt="Atlanta Reception"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Reception</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={AtlantaSwing}
+                    alt="Atlanta Swing"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Swing</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={AtlantaSpaServices}
+                    alt="Atlanta Spa Services"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Spa Services</h4>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Attractions */}
+          <div>
+            <h3 className="text-3xl font-semibold mb-8 text-center">Attractions</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StoneMountain}
+                    alt="Stone Mountain Park"
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Stone Mountain Park</h4>
+                  <p className="text-sm text-muted-foreground text-center">Iconic mountain carving and family-friendly attractions</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={Aquarium}
+                    alt="Aquarium"
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Aquarium</h4>
+                  <p className="text-sm text-muted-foreground text-center">Explore marine life and underwater wonders</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={ZooEntrance}
+                    alt="Zoo Entrance"
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Zoo Entrance</h4>
+                  <p className="text-sm text-muted-foreground text-center">Discover diverse animal exhibits and conservation efforts</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={OlympicPark}
+                    alt="Olympic Park"
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Olympic Park</h4>
+                  <p className="text-sm text-muted-foreground text-center">Historic site of the 1996 Olympics with fountains and events</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -158,7 +303,7 @@ export default function Atlanta() {
                 </CardHeader>
                 <div className="relative h-48 bg-muted">
                   <img
-                    src={index === 0 ? Atlanta13 : Bedroom}
+                    src={index === 0 ? AtlantaSuiteBedroom : AtlantaBedroomAmenity}
                     alt={`${room.title} bed and amenities`}
                     className="h-full w-full object-cover"
                     loading="lazy"
@@ -226,11 +371,12 @@ export default function Atlanta() {
           <h2 className="text-4xl font-bold mb-8 text-center">Atlanta Attractions</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-              <div className="relative h-48 bg-muted">
+              <div className="relative h-64 bg-muted">
                 <img
                   src={StoneMountain}
                   alt="Stone Mountain Park"
                   className="h-full w-full object-cover"
+                  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
                   loading="lazy"
                 />
               </div>
@@ -240,11 +386,12 @@ export default function Atlanta() {
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-              <div className="relative h-48 bg-muted">
+              <div className="relative h-64 bg-muted">
                 <img
                   src={Aquarium}
                   alt="Aquarium"
                   className="h-full w-full object-cover"
+                  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
                   loading="lazy"
                 />
               </div>
@@ -254,11 +401,12 @@ export default function Atlanta() {
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-              <div className="relative h-48 bg-muted">
+              <div className="relative h-64 bg-muted">
                 <img
                   src={ZooEntrance}
                   alt="Zoo Entrance"
                   className="h-full w-full object-cover"
+                  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
                   loading="lazy"
                 />
               </div>
@@ -268,11 +416,12 @@ export default function Atlanta() {
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-              <div className="relative h-48 bg-muted">
+              <div className="relative h-64 bg-muted">
                 <img
                   src={OlympicPark}
                   alt="Olympic Park"
                   className="h-full w-full object-cover"
+                  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
                   loading="lazy"
                 />
               </div>

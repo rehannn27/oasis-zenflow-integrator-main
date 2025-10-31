@@ -17,12 +17,7 @@ export default function Services() {
       description: "Rejuvenating facial treatments for glowing, healthy skin",
       offerings: ["Deep Cleansing Facial", "Anti-Aging Treatment", "Hydrating Facial", "Organic Facials"],
     },
-    {
-      icon: Leaf,
-      title: "Nutritional Detox",
-      description: "Natural detoxification through nutrition and healthy eating habits",
-      offerings: ["Nutritional Cleansing", "Detox Programs", "Healthy Meal Plans"],
-    },
+
     {
       icon: Heart,
       title: "Wellness Classes",

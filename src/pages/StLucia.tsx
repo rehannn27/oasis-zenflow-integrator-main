@@ -4,18 +4,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar, Palmtree } from "lucide-react";
 
 // ST. LUCIA IMAGES
-import StLucia1 from "../assets/1.png";
-import StLuciaSPATreatment from "../assets/SPA treatment.png";
-import StLuciaLivingRoom from "../assets/stlucia/Living Room.png";
-import StLuciaKitchen from "../assets/stlucia/Kitchen & Dining Room.png";
-import StLuciaBathroom from "../assets/stlucia/Bathroom.png";
-import PitonsImg from "../assets/stlucia/st-lucia-pitons.jpg";
-import Cruize from "../assets/stlucia/cruise.jpeg";
-import Mudbath from "../assets/stlucia/mudbath.jpeg";
-import SulphurSpring from "../assets/stlucia/sulphur spring.jpeg";
-import BambooRafting from "../assets/stlucia/bamboo rafting.jpeg";
-import StLucia11 from "../assets/11.png";
-import Bedroomst from "../assets/stlucia/Bedroomst .jpg";
+import StLuciaHero from "../assets/1.png";
+import StLuciaSPATreatment from "../assets/stlucia/Amenities/StLuciaSpaTreatment.png";
+import StLuciaLivingRoom from "../assets/stlucia/Amenities/StLuciaLivingRoom.png";
+import StLuciaKitchen from "../assets/stlucia/Amenities/StLuciaKitchenDining.png";
+import StLuciaBathroom from "../assets/stlucia/Amenities/StLuciaBathroom.png";
+import StLuciaPitons from "../assets/stlucia/st-lucia-pitons.jpg";
+import StLuciaCruise from "../assets/stlucia/StLucia Attractions/StLuciaCruise.jpeg";
+import StLuciaMudbath from "../assets/stlucia/StLucia Attractions/StLuciaMudbath.jpeg";
+import StLuciaSulphurSpring from "../assets/stlucia/StLucia Attractions/StLuciaSulphurSpring.jpeg";
+import StLuciaBambooRafting from "../assets/stlucia/StLucia Attractions/StLuciaBambooRafting.jpeg";
+import StLuciaGalleryHero from "../assets/11.png";
+import StLuciaBedroom from "../assets/stlucia/Room View/StLuciaBedroom.jpg";
+import StLuciaGardenPath from "../assets/stlucia/Room View/StLuciaGardenPath.jpeg";
+import StLuciaPoolDeck from "../assets/stlucia/Room View/StLuciaPoolDeck.jpeg";
+import StLuciaRestaurant from "../assets/stlucia/Room View/StLuciaRestaurant.jpeg";
+import StLuciaSunsetView from "../assets/stlucia/Room View/StLuciaSunsetView.jpeg";
 
 export default function StLucia() {
   const amenities = [
@@ -52,7 +56,7 @@ export default function StLucia() {
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={StLucia11}
+            src={StLuciaGalleryHero}
             alt="St. Lucia wellness retreat exterior"
             className="w-full h-full object-cover"
           />
@@ -79,25 +83,208 @@ export default function StLucia() {
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-12 text-center">St. Lucia Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <img
-              src={Cruize}
-              alt="St. Lucia Cruise"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <img
-              src={StLuciaLivingRoom}
-              alt="St. Lucia Living Room"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <img
-              src={BambooRafting}
-              alt="St. Lucia Bamboo Rafting"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
+
+          {/* Room View Gallery */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-semibold mb-8 text-center">Room View</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaBedroom}
+                    alt="St. Lucia Bedroom"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Bedroom</h4>
+                  <p className="text-sm text-muted-foreground text-center">Comfortable and elegant bedroom space</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaGardenPath}
+                    alt="St. Lucia Garden Path"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Garden Path</h4>
+                  <p className="text-sm text-muted-foreground text-center">Scenic walking paths through lush gardens</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaPoolDeck}
+                    alt="St. Lucia Pool Deck"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Pool Deck</h4>
+                  <p className="text-sm text-muted-foreground text-center">Relaxing pool area with ocean views</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaRestaurant}
+                    alt="St. Lucia Restaurant"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Restaurant</h4>
+                  <p className="text-sm text-muted-foreground text-center">Dining area with local cuisine</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaSunsetView}
+                    alt="St. Lucia Sunset View"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Sunset View</h4>
+                  <p className="text-sm text-muted-foreground text-center">Breathtaking sunset views from the property</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Amenities Gallery */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-semibold mb-8 text-center">Amenities</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaBathroom}
+                    alt="St. Lucia Bathroom"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Bathroom</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaKitchen}
+                    alt="St. Lucia Kitchen & Dining"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Kitchen & Dining</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaLivingRoom}
+                    alt="St. Lucia Living Room"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Living Room</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaSPATreatment}
+                    alt="St. Lucia SPA Treatment"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">SPA Treatment</h4>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Attractions Gallery */}
+          <div>
+            <h3 className="text-3xl font-semibold mb-8 text-center">Attractions</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaCruise}
+                    alt="St. Lucia Cruise"
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Cruise</h4>
+                  <p className="text-sm text-muted-foreground text-center">Scenic boat tours and coastal adventures</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaMudbath}
+                    alt="St. Lucia Mudbath"
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Mudbath</h4>
+                  <p className="text-sm text-muted-foreground text-center">Therapeutic volcanic mud baths for relaxation</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaSulphurSpring}
+                    alt="St. Lucia Sulphur Spring"
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Sulphur Spring</h4>
+                  <p className="text-sm text-muted-foreground text-center">Natural hot springs with healing mineral waters</p>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={StLuciaBambooRafting}
+                    alt="St. Lucia Bamboo Rafting"
+                    className="w-full h-full object-cover"
+                    style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Bamboo Rafting</h4>
+                  <p className="text-sm text-muted-foreground text-center">Traditional bamboo rafting down rainforest rivers</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -144,7 +331,7 @@ export default function StLucia() {
               </CardHeader>
               <div className="relative h-48 bg-muted">
                 <img
-                  src={Bedroomst}
+                  src={StLuciaBedroom}
                   alt="St. Lucia cabin bedroom"
                   className="h-full w-full object-cover"
                   loading="lazy"
@@ -241,15 +428,16 @@ export default function StLucia() {
 
       {/* Attractions */}
       <section className="py-16 px-4 bg-gradient-sunset text-secondary-foreground">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-6xl">Holistic Wellness Services
           <h2 className="text-4xl font-bold mb-8 text-center">St. Lucia Attractions</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-              <div className="relative h-48 bg-muted">
+              <div className="relative h-64 bg-muted">
                 <img
-                  src={Cruize}
+                  src={StLuciaCruise}
                   alt="Cruise"
                   className="h-full w-full object-cover"
+                  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
                   loading="lazy"
                 />
               </div>
@@ -259,11 +447,12 @@ export default function StLucia() {
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-              <div className="relative h-48 bg-muted">
+              <div className="relative h-64 bg-muted">
                 <img
-                  src={Mudbath}
+                  src={StLuciaMudbath}
                   alt="Mudbath"
                   className="h-full w-full object-cover"
+                  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
                   loading="lazy"
                 />
               </div>
@@ -273,11 +462,12 @@ export default function StLucia() {
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-              <div className="relative h-48 bg-muted">
+              <div className="relative h-64 bg-muted">
                 <img
-                  src={SulphurSpring}
+                  src={StLuciaSulphurSpring}
                   alt="Sulphur Spring"
                   className="h-full w-full object-cover"
+                  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
                   loading="lazy"
                 />
               </div>
@@ -287,11 +477,12 @@ export default function StLucia() {
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-              <div className="relative h-48 bg-muted">
+              <div className="relative h-64 bg-muted">
                 <img
-                  src={BambooRafting}
+                  src={StLuciaBambooRafting}
                   alt="Bamboo Rafting"
                   className="h-full w-full object-cover"
+                  style={{ imageRendering: 'crisp-edges', filter: 'contrast(1.2) brightness(1.1) saturate(1.1) sharpen(1px)' }}
                   loading="lazy"
                 />
               </div>

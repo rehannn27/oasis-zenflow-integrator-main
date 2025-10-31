@@ -96,65 +96,32 @@ class DatabaseService {
 
   // Contact Messages
   async createContactMessage(message: Omit<ContactMessage, 'id' | 'status' | 'created_at'>): Promise<ContactMessage | null> {
-    if (!this.supabase) return null;
-
-    // Direct database insert - most reliable approach
-    try {
-      const { data: dbData, error: dbError } = await this.supabase
-        .from('contact_messages')
-        .insert([{
-          ...message,
-          status: 'unread',
-          created_at: new Date().toISOString()
-        }])
-        .select()
-        .single()
-
-      if (dbError) {
-        console.error('Error inserting contact message to database:', dbError)
-        return null
-      }
-
-      console.log('Contact message saved successfully to database')
-      return dbData
-    } catch (error) {
-      console.error('Error saving contact message:', error)
-      return null
+    if (!this.supabase) {
+      console.error('Supabase client not configured.')
+      return null;
     }
-  }
 
-  async getContactMessages(): Promise<ContactMessage[]> {
-    if (!this.supabase) return [];
+    console.log('Attempting to insert contact message:', message);
 
     const { data, error } = await this.supabase
       .from('contact_messages')
-      .select('*')
-      .order('created_at', { ascending: false });
+      .insert([{
+        ...message,
+        status: 'unread',
+        created_at: new Date().toISOString()
+      }])
+      .select()
+      .single();
 
     if (error) {
-      console.error('Error fetching contact messages:', error);
-      return [];
+      console.error('Error inserting contact message to database:', error);
+      console.error('Error details:', JSON.stringify(error, null, 2));
+      return null;
     }
 
-    return data || [];
+    console.log('Contact message inserted successfully:', data);
+    return data;
   }
-
-  async updateContactMessageStatus(id: string, status: ContactMessage['status']): Promise<boolean> {
-    if (!this.supabase) return false;
-
-    const { error } = await this.supabase
-      .from('contact_messages')
-      .update({ status })
-      .eq('id', id);
-
-    if (error) {
-      console.error('Error updating contact message status:', error);
-      return false;
-    }
-
-    return true;
-  }
-
   // Authentication
   async signInAdmin(email: string, password: string) {
     if (!this.supabase) return null;
