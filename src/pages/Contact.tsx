@@ -21,6 +21,7 @@ export default function Contact() {
     e.preventDefault();
 
     try {
+      // Save to database
       const result = await databaseService.createContactMessage({
         name: formData.name,
         email: formData.email,
@@ -28,13 +29,31 @@ export default function Contact() {
         message: formData.message,
       });
 
-      if (result) {
+      // Send email notification using Supabase Edge Function
+      const { getSupabaseClient } = await import('@/lib/supabaseClient');
+      const supabase = getSupabaseClient();
+
+      if (!supabase) {
+        throw new Error('Supabase client not configured');
+      }
+
+      const { data: emailData, error: emailError } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+      });
+
+      if (result && !emailError) {
         toast({
           title: "Message Sent!",
           description: "We'll get back to you as soon as possible.",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
+        console.error('Email error:', emailError);
         toast({
           title: "Error",
           description: "Failed to send message. Please try again.",

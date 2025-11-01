@@ -21,7 +21,9 @@ serve(async (req) => {
       Deno.env.get('SUPABASE_ANON_KEY') ?? '',
       {
         global: {
-          headers: { Authorization: req.headers.get('Authorization')! },
+          headers: {
+            apikey: Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+          },
         },
       }
     )
@@ -68,7 +70,7 @@ serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Oasis Zenflow <noreply@oasiszenflow.com>',
+        from: 'Oasis Zenflow <noreply@resend.dev>',
         to: [adminEmail],
         subject: `New Contact Form Submission: ${subject}`,
         html: `

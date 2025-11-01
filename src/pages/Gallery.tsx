@@ -140,24 +140,24 @@ export default function Gallery() {
                     return (
                       <div className="mb-12">
                         <h3 className="text-2xl font-semibold mb-6 text-center">Atlanta Attractions</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                           {attractionsImages.map((img, index) => (
                             <Card
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative h-64 bg-muted">
+                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}
                                   alt={img.title}
-                                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                                   loading="lazy"
                                 />
                               </div>
                               <div className="p-4">
-                                <h3 className="text-base font-semibold">{img.title}</h3>
-                                <span className="text-xs text-primary">Atlanta Attractions</span>
+                                <h3 className="text-base font-semibold text-center">{img.title}</h3>
+                                <span className="text-xs text-primary block text-center">Atlanta Attractions</span>
                               </div>
                             </Card>
                           ))}
@@ -182,24 +182,24 @@ export default function Gallery() {
                     return (
                       <div className="mb-12">
                         <h3 className="text-2xl font-semibold mb-6 text-center">Amenities</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                           {amenitiesImages.map((img, index) => (
                             <Card
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative h-64 bg-muted">
+                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}
                                   alt={img.title}
-                                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                                   loading="lazy"
                                 />
                               </div>
                               <div className="p-4">
-                                <h3 className="text-base font-semibold">{img.title}</h3>
-                                <span className="text-xs text-primary">Amenities</span>
+                                <h3 className="text-base font-semibold text-center">{img.title}</h3>
+                                <span className="text-xs text-primary block text-center">Amenities</span>
                               </div>
                             </Card>
                           ))}
@@ -228,24 +228,24 @@ export default function Gallery() {
                     return (
                       <div className="mb-12">
                         <h3 className="text-2xl font-semibold mb-6 text-center">Property Views</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                           {otherImages.map((img, index) => (
                             <Card
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative h-64 bg-muted">
+                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}
                                   alt={img.title}
-                                  className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
                                   loading="lazy"
                                 />
                               </div>
                               <div className="p-4">
-                                <h3 className="text-base font-semibold">{img.title}</h3>
-                                <span className="text-xs text-primary">Property Views</span>
+                                <h3 className="text-base font-semibold text-center">{img.title}</h3>
+                                <span className="text-xs text-primary block text-center">Property Views</span>
                               </div>
                             </Card>
                           ))}
@@ -255,29 +255,145 @@ export default function Gallery() {
                   })()}
                 </>
               ) : (
-                // Default grid for other locations
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {locationImages.map((img, index) => (
-                    <Card
-                      key={`${img.src}-${index}`}
-                      className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
-                    >
-                      <div className="relative h-64 bg-muted">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={img.src}
-                          alt={img.title}
-                          className="h-full w-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
-                          loading="lazy"
-                        />
+                // Special handling for St. Lucia with subcategories
+                <>
+                  {/* St. Lucia Nearby Attractions */}
+                  {(() => {
+                    const attractionsImages = locationImages.filter(img =>
+                      img.title.toLowerCase().includes('pitons') ||
+                      img.title.toLowerCase().includes('sulphur spring') ||
+                      img.title.toLowerCase().includes('bamboo rafting') ||
+                      img.title.toLowerCase().includes('cruise') ||
+                      img.title.toLowerCase().includes('mudbath') ||
+                      img.title.toLowerCase().includes('olympic park') ||
+                      img.title.toLowerCase().includes('sunset')
+                    );
+                    if (attractionsImages.length === 0) return null;
+                    return (
+                      <div className="mb-12">
+                        <h3 className="text-2xl font-semibold mb-6 text-center">Nearby Attractions</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                          {attractionsImages.map((img, index) => (
+                            <Card
+                              key={`${img.src}-${index}`}
+                              className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+                            >
+                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={img.src}
+                                  alt={img.title}
+                                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <h3 className="text-base font-semibold text-center">{img.title}</h3>
+                                <span className="text-xs text-primary block text-center">Nearby Attractions</span>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
                       </div>
-                      <div className="p-4">
-                        <h3 className="text-base font-semibold">{img.title}</h3>
-                        <span className="text-xs text-primary">{img.category}</span>
+                    );
+                  })()}
+
+                  {/* St. Lucia Amenities */}
+                  {(() => {
+                    const amenitiesImages = locationImages.filter(img =>
+                      img.title.toLowerCase().includes('bathroom') ||
+                      img.title.toLowerCase().includes('bedroom') ||
+                      img.title.toLowerCase().includes('kitchen') ||
+                      img.title.toLowerCase().includes('dining room') ||
+                      img.title.toLowerCase().includes('living room') ||
+                      img.title.toLowerCase().includes('lounge') ||
+                      img.title.toLowerCase().includes('reception') ||
+                      img.title.toLowerCase().includes('spa treatment') ||
+                      img.title.toLowerCase().includes('eating patio') ||
+                      img.title.toLowerCase().includes('entrance') ||
+                      img.title.toLowerCase().includes('swing')
+                    );
+                    if (amenitiesImages.length === 0) return null;
+                    return (
+                      <div className="mb-12">
+                        <h3 className="text-2xl font-semibold mb-6 text-center">Amenities</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                          {amenitiesImages.map((img, index) => (
+                            <Card
+                              key={`${img.src}-${index}`}
+                              className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+                            >
+                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={img.src}
+                                  alt={img.title}
+                                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <h3 className="text-base font-semibold text-center">{img.title}</h3>
+                                <span className="text-xs text-primary block text-center">Amenities</span>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
                       </div>
-                    </Card>
-                  ))}
-                </div>
+                    );
+                  })()}
+
+                  {/* Other St. Lucia Images */}
+                  {(() => {
+                    const otherImages = locationImages.filter(img =>
+                      !img.title.toLowerCase().includes('pitons') &&
+                      !img.title.toLowerCase().includes('sulphur spring') &&
+                      !img.title.toLowerCase().includes('bamboo rafting') &&
+                      !img.title.toLowerCase().includes('cruise') &&
+                      !img.title.toLowerCase().includes('mudbath') &&
+                      !img.title.toLowerCase().includes('olympic park') &&
+                      !img.title.toLowerCase().includes('bathroom') &&
+                      !img.title.toLowerCase().includes('bedroom') &&
+                      !img.title.toLowerCase().includes('kitchen') &&
+                      !img.title.toLowerCase().includes('dining room') &&
+                      !img.title.toLowerCase().includes('living room') &&
+                      !img.title.toLowerCase().includes('lounge') &&
+                      !img.title.toLowerCase().includes('reception') &&
+                      !img.title.toLowerCase().includes('spa treatment') &&
+                      !img.title.toLowerCase().includes('eating patio') &&
+                      !img.title.toLowerCase().includes('entrance') &&
+                      !img.title.toLowerCase().includes('swing')
+                    );
+                    if (otherImages.length === 0) return null;
+                    return (
+                      <div className="mb-12">
+                        <h3 className="text-2xl font-semibold mb-6 text-center">Property Views</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                          {otherImages.map((img, index) => (
+                            <Card
+                              key={`${img.src}-${index}`}
+                              className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
+                            >
+                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={img.src}
+                                  alt={img.title}
+                                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div className="p-4">
+                                <h3 className="text-base font-semibold text-center">{img.title}</h3>
+                                <span className="text-xs text-primary block text-center">Property Views</span>
+                              </div>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })()}
+                </>
               )}
             </div>
           );
