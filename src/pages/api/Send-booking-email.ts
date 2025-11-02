@@ -25,8 +25,8 @@ export async function POST(request: Request) {
       },
     });
 
-    // ✅ Email content
-    const mailOptions = {
+    // ✅ Email content for owner
+    const ownerMailOptions = {
       from: `"Retreat Booking" <${process.env.EMAIL_USER}>`,
       to: process.env.OWNER_EMAIL, // your personal email
       subject: `New Booking Request from ${name}`,
@@ -44,8 +44,32 @@ export async function POST(request: Request) {
       `,
     };
 
-    // ✅ Send email
-    await transporter.sendMail(mailOptions);
+    // ✅ Email content for customer confirmation
+    const customerMailOptions = {
+      from: `"Oasis Calm Holistic Center" <${process.env.EMAIL_USER}>`,
+      to: email, // customer's email
+      subject: `Booking Confirmation - ${name}`,
+      html: `
+        <h2>Thank you for your booking request, ${name}!</h2>
+        <p>We have received your booking details and will contact you shortly to confirm availability and process payment.</p>
+
+        <h3>Your Booking Details:</h3>
+        <p><strong>Location:</strong> ${location}</p>
+        <p><strong>Accommodation:</strong> ${accommodation}</p>
+        <p><strong>Check-In:</strong> ${checkIn}</p>
+        <p><strong>Check-Out:</strong> ${checkOut}</p>
+        <p><strong>Guests:</strong> ${guests}</p>
+        <p><strong>Special Requests:</strong> ${specialRequests || "None"}</p>
+
+        <p>If you have any questions, please contact us at ${process.env.OWNER_EMAIL} or call us at St. Lucia: 758.451.7375</p>
+
+        <p>Best regards,<br>Oasis Calm Holistic Center Team</p>
+      `,
+    };
+
+    // ✅ Send emails
+    await transporter.sendMail(ownerMailOptions);
+    await transporter.sendMail(customerMailOptions);
 
     return NextResponse.json({ success: true });
   } catch (error) {
