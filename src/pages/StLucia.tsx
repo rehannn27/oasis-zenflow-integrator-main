@@ -19,7 +19,7 @@ import StLuciaBedroom from "../assets/stlucia/Room View/StLuciaBedroom.jpg";
 import StLuciaGardenPath from "../assets/stlucia/Room View/StLuciaGardenPath.jpeg";
 
 import StLuciaRestaurant from "../assets/stlucia/Room View/StLuciaRestaurant.jpeg";
-import StLuciaSunsetView from "../assets/stlucia/Room View/StLuciaSunsetView.jpeg";
+
 import GazeboStLucia from "../assets/gazebostluia.jpg";
 import SpaStLucia from "../assets/spastlucia.jpg";
 
@@ -118,20 +118,7 @@ export default function StLucia() {
                   <p className="text-sm text-muted-foreground text-center">Scenic walking paths through lush gardens</p>
                 </CardContent>
               </Card>
-              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
-                  <img
-                    src={StLuciaPoolDeck}
-                    alt="St. Lucia Pool Deck"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <h4 className="font-semibold text-center">Pool Deck</h4>
-                  <p className="text-sm text-muted-foreground text-center">Relaxing pool area with ocean views</p>
-                </CardContent>
-              </Card>
+
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
                   <img
