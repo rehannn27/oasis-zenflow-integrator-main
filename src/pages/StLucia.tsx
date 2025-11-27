@@ -18,6 +18,8 @@ import StLuciaGalleryHero from "../assets/11.png";
 import StLuciaBedroom from "../assets/stlucia/Room View/StLuciaBedroom.jpg";
 import StLuciaGardenPath from "../assets/stlucia/Room View/StLuciaGardenPath.jpeg";
 import StLuciaRestaurant from "../assets/stlucia/Room View/StLuciaRestaurant.jpeg";
+import GazeboStLucia from "../assets/gazebostluia.jpg";
+import SpaStLucia from "../assets/spastlucia.jpg";
 
 export default function StLucia() {
   const amenities = [
@@ -190,7 +192,19 @@ export default function StLucia() {
                   <h4 className="font-semibold text-center">SPA Treatment</h4>
                 </CardContent>
               </Card>
-
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={SpaStLucia}
+                    alt="St. Lucia SPA"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">SPA</h4>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
