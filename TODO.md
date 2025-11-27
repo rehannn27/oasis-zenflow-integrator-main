@@ -1,7 +1,9 @@
-# TODO: Replace Atlanta Hero Image
+# TODO: Add New St. Lucia Images and Deploy to Vercel
 
 ## Steps to Complete
-- [x] Update import in src/pages/Atlanta.tsx to use newat.jpeg instead of atlannta.jpeg
-- [x] Verify that newat.jpeg exists in src/assets/atlanta/ folder
-- [x] Test the Atlanta page to ensure the new hero image loads correctly
-- [x] Change "Atlanta" text color to white in the hero section
+- [x] Import new images (gazebostluia.jpg and spastlucia.jpg) in src/pages/StLucia.tsx
+- [x] Add Gazebo image to Room View gallery in StLucia.tsx
+- [x] Add SPA image to Amenities gallery in StLucia.tsx
+- [x] Verify images appear in Gallery.tsx under St. Lucia Property Views (auto-imported)
+- [x] Test the website locally to ensure images load (npm run dev running)
+- [x] Deploy to Vercel (successful: https://oasis-zenflow-integrator-main-4t1b2f5cq.vercel.app)

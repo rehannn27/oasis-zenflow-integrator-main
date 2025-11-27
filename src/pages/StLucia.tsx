@@ -17,9 +17,11 @@ import StLuciaBambooRafting from "../assets/stlucia/StLucia Attractions/StLuciaB
 import StLuciaGalleryHero from "../assets/11.png";
 import StLuciaBedroom from "../assets/stlucia/Room View/StLuciaBedroom.jpg";
 import StLuciaGardenPath from "../assets/stlucia/Room View/StLuciaGardenPath.jpeg";
-import StLuciaPoolDeck from "../assets/stlucia/Room View/StLuciaPoolDeck.jpeg";
+
 import StLuciaRestaurant from "../assets/stlucia/Room View/StLuciaRestaurant.jpeg";
 import StLuciaSunsetView from "../assets/stlucia/Room View/StLuciaSunsetView.jpeg";
+import GazeboStLucia from "../assets/gazebostluia.jpg";
+import SpaStLucia from "../assets/spastlucia.jpg";
 
 export default function StLucia() {
   const amenities = [
@@ -158,6 +160,20 @@ export default function StLucia() {
                   <p className="text-sm text-muted-foreground text-center">Breathtaking sunset views from the property</p>
                 </CardContent>
               </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={GazeboStLucia}
+                    alt="St. Lucia Gazebo"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">Gazebo</h4>
+                  <p className="text-sm text-muted-foreground text-center">Relaxing gazebo with ocean views</p>
+                </CardContent>
+              </Card>
             </div>
           </div>
 
@@ -215,6 +231,19 @@ export default function StLucia() {
                 </div>
                 <CardContent className="p-4">
                   <h4 className="font-semibold text-center">SPA Treatment</h4>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img
+                    src={SpaStLucia}
+                    alt="St. Lucia SPA"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <h4 className="font-semibold text-center">SPA</h4>
                 </CardContent>
               </Card>
             </div>

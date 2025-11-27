@@ -42,7 +42,7 @@ export default function Home() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Restore Your <span className="bg-gradient-ocean bg-clip-text text-transparent" style={{ textShadow: 'none', filter: 'none' }}>Balance</span>
+            Restore Your <span className="bg-gradient-ocean bg-clip-text text-transparent" style={{ textShadow: '<shadow-t>#013220', filter: 'none' }}>Balance</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-white font-semibold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
