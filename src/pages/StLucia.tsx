@@ -17,13 +17,46 @@ import StLuciaBambooRafting from "../assets/stlucia/StLucia Attractions/StLuciaB
 import StLuciaGalleryHero from "../assets/11.png";
 import StLuciaBedroom from "../assets/stlucia/Room View/StLuciaBedroom.jpg";
 import StLuciaGardenPath from "../assets/stlucia/Room View/StLuciaGardenPath.jpeg";
-
 import StLuciaRestaurant from "../assets/stlucia/Room View/StLuciaRestaurant.jpeg";
-
 import GazeboStLucia from "../assets/gazebostluia.jpg";
 import SpaStLucia from "../assets/spastlucia.jpg";
 
 export default function StLucia() {
+  // Test basic rendering first
+  return (
+    <div className="min-h-screen p-8">
+      <h1 className="text-4xl font-bold mb-8">St. Lucia Page Test</h1>
+      <p className="mb-4">If you can see this, the component is rendering.</p>
+
+      <div className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">New Images Test:</h2>
+        <div className="grid grid-cols-2 gap-4">
+          <Card>
+            <CardContent className="p-4">
+              <img
+                src={GazeboStLucia}
+                alt="Gazebo"
+                className="w-full h-48 object-cover rounded"
+                onError={(e) => console.log('Gazebo image failed to load')}
+              />
+              <p className="mt-2 text-center">Gazebo Image</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-4">
+              <img
+                src={SpaStLucia}
+                alt="SPA"
+                className="w-full h-48 object-cover rounded"
+                onError={(e) => console.log('SPA image failed to load')}
+              />
+              <p className="mt-2 text-center">SPA Image</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
   const amenities = [
     "Walk-in Shower",
     "Queen Bed & Futon",
@@ -133,20 +166,7 @@ export default function StLucia() {
                   <p className="text-sm text-muted-foreground text-center">Dining area with local cuisine</p>
                 </CardContent>
               </Card>
-              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
-                  <img
-                    src={StLuciaSunsetView}
-                    alt="St. Lucia Sunset View"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <CardContent className="p-4">
-                  <h4 className="font-semibold text-center">Sunset View</h4>
-                  <p className="text-sm text-muted-foreground text-center">Breathtaking sunset views from the property</p>
-                </CardContent>
-              </Card>
+
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
                   <img
@@ -444,7 +464,7 @@ export default function StLucia() {
 
       {/* Attractions */}
       <section className="py-16 px-4 bg-gradient-sunset text-secondary-foreground">
-        <div className="container mx-auto max-w-6xl">Holistic Wellness Services
+        <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold mb-8 text-center">St. Lucia Attractions</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
