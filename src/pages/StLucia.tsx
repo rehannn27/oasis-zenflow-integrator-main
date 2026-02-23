@@ -21,6 +21,17 @@ import StLuciaRestaurant from "../assets/stlucia/Room View/StLuciaRestaurant.jpe
 import GazeboStLucia from "../assets/gazebostluia.jpg";
 import SpaStLucia from "../assets/spastlucia.jpg";
 
+// NEW PHOTOS IMPORTS
+import NewPhoto1 from "../assets/new1.jpeg";
+import NewPhoto2 from "../assets/new2.jpeg";
+import NewPhoto3 from "../assets/new3.jpeg";
+import NewPhoto4 from "../assets/new4.jpeg";
+import NewPhoto5 from "../assets/new5.jpeg";
+import Photo6 from "../assets/6.jpeg";
+import Photo7 from "../assets/7.jpeg";
+import Photo8 from "../assets/8.jpeg";
+import Photo9 from "../assets/9.jpeg";
+
 export default function StLucia() {
   const amenities = [
     "Walk-in Shower",
@@ -271,6 +282,67 @@ export default function StLucia() {
                   <h4 className="font-semibold text-center">Bamboo Rafting</h4>
                   <p className="text-sm text-muted-foreground text-center">Traditional bamboo rafting down rainforest rivers</p>
                 </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* New Exterior/Extras Gallery */}
+          <div className="mt-16">
+            <h3 className="text-3xl font-semibold mb-8 text-center">Exterior & More</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={NewPhoto1} alt="Exterior View 1" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={NewPhoto2} alt="Exterior View 2" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={NewPhoto3} alt="Exterior View 3" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={NewPhoto4} alt="Exterior View 4" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={NewPhoto5} alt="Exterior View 5" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={Photo6} alt="Property View 1" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={Photo7} alt="Property View 2" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={Photo8} alt="Property View 3" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
+              </Card>
+              <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                  <img src={Photo9} alt="Property View 4" className="w-full h-full object-cover" loading="lazy" />
+                </div>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
               </Card>
             </div>
           </div>
