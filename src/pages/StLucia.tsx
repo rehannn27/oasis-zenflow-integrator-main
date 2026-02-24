@@ -291,55 +291,55 @@ export default function StLucia() {
             <h3 className="text-3xl font-semibold mb-8 text-center">Exterior & More</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto1} alt="Exterior View 1" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto2} alt="Exterior View 2" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto3} alt="Exterior View 3" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto4} alt="Exterior View 4" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto5} alt="Exterior View 5" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={Photo6} alt="Property View 1" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={Photo7} alt="Property View 2" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={Photo8} alt="Property View 3" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={Photo9} alt="Property View 4" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
