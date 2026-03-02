@@ -146,7 +146,7 @@ export default function Gallery() {
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                              <div className="relative h-64 bg-muted overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}
@@ -188,7 +188,7 @@ export default function Gallery() {
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                              <div className="relative h-64 bg-muted overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}
@@ -234,7 +234,7 @@ export default function Gallery() {
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                              <div className="relative h-64 bg-muted overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}
@@ -278,7 +278,7 @@ export default function Gallery() {
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                              <div className="relative h-64 bg-muted overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}
@@ -323,7 +323,7 @@ export default function Gallery() {
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                              <div className="relative h-64 bg-muted overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}
@@ -374,7 +374,7 @@ export default function Gallery() {
                               key={`${img.src}-${index}`}
                               className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)] group"
                             >
-                              <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                              <div className="relative h-64 bg-muted overflow-hidden">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={img.src}

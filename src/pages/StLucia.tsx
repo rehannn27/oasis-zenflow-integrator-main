@@ -100,7 +100,7 @@ export default function StLucia() {
             <h3 className="text-3xl font-semibold mb-8 text-center">Room View</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaBedroom}
                     alt="St. Lucia Bedroom"
@@ -114,7 +114,7 @@ export default function StLucia() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaGardenPath}
                     alt="St. Lucia Garden Path"
@@ -129,7 +129,7 @@ export default function StLucia() {
               </Card>
 
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaRestaurant}
                     alt="St. Lucia Restaurant"
@@ -152,7 +152,7 @@ export default function StLucia() {
             <h3 className="text-3xl font-semibold mb-8 text-center">Amenities</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaBathroom}
                     alt="St. Lucia Bathroom"
@@ -165,7 +165,7 @@ export default function StLucia() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaKitchen}
                     alt="St. Lucia Kitchen & Dining"
@@ -178,7 +178,7 @@ export default function StLucia() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaLivingRoom}
                     alt="St. Lucia Living Room"
@@ -191,7 +191,7 @@ export default function StLucia() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaSPATreatment}
                     alt="St. Lucia SPA Treatment"
@@ -204,7 +204,7 @@ export default function StLucia() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={SpaStLucia}
                     alt="St. Lucia SPA"
@@ -224,7 +224,7 @@ export default function StLucia() {
             <h3 className="text-3xl font-semibold mb-8 text-center">Attractions</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaCruise}
                     alt="St. Lucia Cruise"
@@ -239,7 +239,7 @@ export default function StLucia() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaMudbath}
                     alt="St. Lucia Mudbath"
@@ -254,7 +254,7 @@ export default function StLucia() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaSulphurSpring}
                     alt="St. Lucia Sulphur Spring"
@@ -269,7 +269,7 @@ export default function StLucia() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StLuciaBambooRafting}
                     alt="St. Lucia Bamboo Rafting"

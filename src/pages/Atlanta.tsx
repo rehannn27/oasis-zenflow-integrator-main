@@ -101,7 +101,7 @@ export default function Atlanta() {
             <h3 className="text-3xl font-semibold mb-8 text-center">Amenities</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={AtlantaBedroom}
                     alt="Atlanta Bedroom"
@@ -114,7 +114,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={AtlantaCreekside}
                     alt="Atlanta Creekside"
@@ -127,7 +127,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={AtlantaEntrance}
                     alt="Atlanta Entrance"
@@ -140,7 +140,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={AtlantaLounge}
                     alt="Atlanta Lounge"
@@ -153,7 +153,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={AtlantaReception}
                     alt="Atlanta Reception"
@@ -166,7 +166,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={AtlantaSwing}
                     alt="Atlanta Swing"
@@ -179,7 +179,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={AtlantaSpaServices}
                     alt="Atlanta Spa Services"
@@ -199,7 +199,7 @@ export default function Atlanta() {
             <h3 className="text-3xl font-semibold mb-8 text-center">Attractions</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={StoneMountain}
                     alt="Stone Mountain Park"
@@ -214,7 +214,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={Aquarium}
                     alt="Aquarium"
@@ -229,7 +229,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={ZooEntrance}
                     alt="Zoo Entrance"
@@ -244,7 +244,7 @@ export default function Atlanta() {
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
-                <div className="relative w-48 h-48 mx-auto bg-muted rounded-full overflow-hidden">
+                <div className="relative h-64 bg-muted overflow-hidden">
                   <img
                     src={OlympicPark}
                     alt="Olympic Park"
