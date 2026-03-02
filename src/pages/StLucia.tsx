@@ -294,7 +294,7 @@ export default function StLucia() {
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={GazeboView} alt="Exterior View 1" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Gazebo</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
@@ -306,43 +306,43 @@ export default function StLucia() {
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto3} alt="Exterior View 3" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Dining Room</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto4} alt="Exterior View 4" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Kitchen</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto5} alt="Exterior View 5" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Bath</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={Photo6} alt="Property View 1" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Bath</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={Photo7} alt="Property View 2" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Bath</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={Photo8} alt="Property View 3" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">SPA</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={Photo9} alt="Property View 4" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Property View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Bath</h4></CardContent>
               </Card>
             </div>
           </div>
