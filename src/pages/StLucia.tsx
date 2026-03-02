@@ -22,7 +22,7 @@ import GazeboStLucia from "../assets/gazebostluia.jpg";
 import SpaStLucia from "../assets/spastlucia.jpg";
 
 // NEW PHOTOS IMPORTS
-import NewPhoto1 from "../assets/new1.jpeg";
+import GazeboView from "../assets/gazebo.jpeg";
 import NewPhoto2 from "../assets/new2.jpeg";
 import NewPhoto3 from "../assets/new3.jpeg";
 import NewPhoto4 from "../assets/new4.jpeg";
@@ -292,7 +292,7 @@ export default function StLucia() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
-                  <img src={NewPhoto1} alt="Exterior View 1" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={GazeboView} alt="Exterior View 1" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
               </Card>
@@ -300,7 +300,7 @@ export default function StLucia() {
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img src={NewPhoto2} alt="Exterior View 2" className="w-full h-full object-cover" loading="lazy" />
                 </div>
-                <CardContent className="p-4"><h4 className="font-semibold text-center">Exterior View</h4></CardContent>
+                <CardContent className="p-4"><h4 className="font-semibold text-center">Bedroom</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
