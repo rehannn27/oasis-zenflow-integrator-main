@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar } from "lucide-react";
 
 // ATLANTA IMAGES (using Atlanta1.jpeg to Atlanta13.jpeg)
-import AtlantaHeroImage from "../assets/atlanta/pls.jpg";
+import AtlantaHeroImage from "../assets/atlanta/Atlanta.jpg";
 import AtlantaCreeksideView from "../assets/atlanta/AtlantaCreeksideView.jpeg";
 import AtlantaExterior from "../assets/atlanta/AtlantaExterior.jpeg";
 import AtlantaBedroom from "../assets/atlanta/Amenities/Bedroom.png";

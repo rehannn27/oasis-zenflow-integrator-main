@@ -1,8 +1,12 @@
-# TODO List - Add New Photos to Website
+# Fix Booking Email Address Task
 
-## StLucia.tsx Updates
-- [x] Add imports for new images (new1-5.jpeg, 6-9.jpeg)
-- [x] Add new "Exterior/Extras" gallery section with the new photos
+## Steps:
+- [x] Step 1: Create .env.local with OWNER_EMAIL=oasisofcalmholisticcenter@gmail.com
+- [x] Step 2: Fix hardcoded email display typo in src/pages/Book.tsx
+- [ ] Step 3: Test booking flow (navigate to /stlucia or /atlanta, click Book Now, submit form)
+- [ ] Step 4: Verify emails use correct address (check console/server logs)
 
-## Atlanta.tsx Updates
-- [x] No changes needed - new photos are for St. Lucia page only
+**Notes:** 
+- Set EMAIL_USER and EMAIL_PASS in .env.local for Gmail (use App Password).
+- Restart dev server after env changes: `bun dev` or `npm run dev`.
+

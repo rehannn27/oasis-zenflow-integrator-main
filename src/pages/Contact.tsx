@@ -4,72 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { databaseService } from "@/lib/database";
 
 export default function Contact() {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      // Save to database
-      const result = await databaseService.createContactMessage({
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-      });
-
-      // Send email notification using Supabase Edge Function
-      const { getSupabaseClient } = await import('@/lib/supabaseClient');
-      const supabase = getSupabaseClient();
-
-      if (!supabase) {
-        throw new Error('Supabase client not configured');
-      }
-
-      const { data: emailData, error: emailError } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        },
-      });
-
-      if (result && !emailError) {
-        toast({
-          title: "Message Sent!",
-          description: "We'll get back to you as soon as possible.",
-        });
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        console.error('Email error:', emailError);
-        toast({
-          title: "Error",
-          description: "Failed to send message. Please try again.",
-          variant: "destructive",
-        });
-      }
-    } catch (error) {
-      console.error('Error sending message:', error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
-
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -87,13 +23,19 @@ export default function Contact() {
             <Card className="shadow-[var(--shadow-soft)]">
               <CardContent className="p-6 md:p-8">
                 <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form 
+                  action="https://formspree.io/f/YOUR_FORMSPREE_HASH" 
+                  method="POST" 
+                  className="space-y-4"
+                >
+                  <input type="text" name="_subject" hidden value="New Contact Form Submission" />
+                  <input type="email" name="_replyto" hidden value="sender@example.com" />
+                  
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
                     <Input
                       id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                      name="name"
                       required
                       placeholder="Your name"
                     />
@@ -104,8 +46,7 @@ export default function Contact() {
                     <Input
                       id="email"
                       type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      name="_replyto"
                       required
                       placeholder="your@email.com"
                     />
@@ -114,9 +55,8 @@ export default function Contact() {
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
                     <Input
-                      id="subject"
-                      value={formData.subject}
-                      onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                      id="_subject"
+                      name="_subject"
                       required
                       placeholder="How can we help?"
                     />
@@ -126,8 +66,7 @@ export default function Contact() {
                     <Label htmlFor="message">Message</Label>
                     <Textarea
                       id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                      name="message"
                       required
                       placeholder="Tell us more about your inquiry..."
                       rows={5}
@@ -172,7 +111,7 @@ export default function Contact() {
               <CardContent className="p-0">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-gradient-sunset rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-white" />
+                    <MapPin className="h-6 w-4 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-2">St. Lucia Location</h3>
