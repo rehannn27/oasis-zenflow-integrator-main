@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
-import { databaseService } from '@/lib/database';
+// import { databaseService } from '@/lib/database';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const user = await databaseService.getCurrentAdmin();
+        const user = null; // Admin disabled for deployment
         setIsAuthenticated(!!user);
       } catch (error) {
         console.error('Auth check failed:', error);

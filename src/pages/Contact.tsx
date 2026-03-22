@@ -9,6 +9,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="container mx-auto max-w-6xl">
+
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
@@ -18,19 +19,21 @@ export default function Contact() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
+
           {/* Contact Form */}
           <div>
             <Card className="shadow-[var(--shadow-soft)]">
               <CardContent className="p-6 md:p-8">
                 <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+
                 <form 
-                  action="https://formspree.io/f/YOUR_FORMSPREE_HASH" 
+                  action="https://formspree.io/f/xeerwvda" 
                   method="POST" 
                   className="space-y-4"
                 >
-                  <input type="text" name="_subject" hidden value="New Contact Form Submission" />
-                  <input type="email" name="_replyto" hidden value="sender@example.com" />
-                  
+
+                  <input type="hidden" name="project" value="Oasis Contact Form" />
+
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
                     <Input
@@ -46,7 +49,7 @@ export default function Contact() {
                     <Input
                       id="email"
                       type="email"
-                      name="_replyto"
+                      name="email"
                       required
                       placeholder="your@email.com"
                     />
@@ -55,8 +58,8 @@ export default function Contact() {
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
                     <Input
-                      id="_subject"
-                      name="_subject"
+                      id="subject"
+                      name="subject"
                       required
                       placeholder="How can we help?"
                     />
@@ -77,98 +80,66 @@ export default function Contact() {
                     <Send className="mr-2 h-4 w-4" />
                     Send Message
                   </Button>
+
                 </form>
+
               </CardContent>
             </Card>
           </div>
 
-          {/* Contact Information */}
+          {/* Contact Info */}
           <div className="space-y-6">
-            {/* Atlanta Location */}
-            <Card className="p-6 hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+
+            <Card className="p-6">
               <CardContent className="p-0">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-ocean rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
+                <div className="flex gap-4">
+                  <MapPin />
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Atlanta Location</h3>
-                    <p className="text-muted-foreground mb-2">
-                      Snellville, GA 30039 USA<br />
-                      Near Stone Mountain Park
-                    </p>
-                    <div className="flex items-center gap-2 text-primary">
-                      <Phone className="h-4 w-4" />
-                      <span className="font-medium">404-433-2899</span>
-                    </div>
+                    <h3 className="font-semibold">Atlanta</h3>
+                    <p>Snellville, GA</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* St. Lucia Location */}
-            <Card className="p-6 hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+            <Card className="p-6">
               <CardContent className="p-0">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-sunset rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-4 text-white" />
-                  </div>
+                <div className="flex gap-4">
+                  <Phone />
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">St. Lucia Location</h3>
-                    <p className="text-muted-foreground mb-2">
-                      The Morne, St. Lucia WI<br />
-                      Near Government House
-                    </p>
-                    <div className="flex items-center gap-2 text-primary">
-                      <Phone className="h-4 w-4" />
-                      <span className="font-medium">758-451-7375</span>
-                    </div>
+                    <h3 className="font-semibold">Phone</h3>
+                    <p>404-433-2899</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Email */}
-            <Card className="p-6 hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
+            <Card className="p-6">
               <CardContent className="p-0">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-gradient-ocean rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
+                <div className="flex gap-4">
+                  <Mail />
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-                    <a 
-                      href="mailto:oasisofcalmholisticcenter@gmail.com"
-                      className="text-primary hover:underline break-all"
-                    >
-                      oasisofcalmholisticcenter@gmail.com
-                    </a>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      We typically respond within 24 hours
-                    </p>
+                    <h3 className="font-semibold">Email</h3>
+                    <p>oasisofcalmholisticcenter@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Hours */}
-            <Card className="p-6 bg-gradient-calm border-2 border-primary/20">
+            <Card className="p-6">
               <CardContent className="p-0">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
+                <div className="flex gap-4">
+                  <Clock />
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Availability</h3>
-                    <p className="text-muted-foreground">
-                      Open year-round by reservation<br />
-                      Flexible check-in times available
-                    </p>
+                    <h3 className="font-semibold">Availability</h3>
+                    <p>Open year-round</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
           </div>
+
         </div>
       </div>
     </div>

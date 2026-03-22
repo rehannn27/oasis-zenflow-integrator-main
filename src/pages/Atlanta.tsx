@@ -4,25 +4,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar } from "lucide-react";
 
 // ATLANTA IMAGES (using Atlanta1.jpeg to Atlanta13.jpeg)
-import AtlantaHeroImage from "../assets/atlanta/Atlanta.jpg";
-import AtlantaCreeksideView from "../assets/atlanta/AtlantaCreeksideView.jpeg";
-import AtlantaExterior from "../assets/atlanta/AtlantaExterior.jpeg";
-import AtlantaBedroom from "../assets/atlanta/Amenities/Bedroom.png";
-import AtlantaBedroom2 from "../assets/atlanta/AtlantaBedroomView.jpeg";
-import AtlantaCreekside from "../assets/atlanta/Amenities/Creekside.png";
-import AtlantaDining from "../assets/atlanta/AtlantaDiningArea.jpeg";
-import AtlantaEntrance from "../assets/atlanta/Amenities/Entrance To Bedroom.png";
-import AtlantaLounge from "../assets/atlanta/Amenities/Lounge.png";
-import AtlantaReception from "../assets/atlanta/Amenities/Reception.png";
-import AtlantaLuxurySuite from "../assets/atlanta/AtlantaLuxurySuite.jpeg";
-import AtlantaSwing from "../assets/atlanta/Amenities/Swing.png";
-import AtlantaSpaServices from "../assets/atlanta/Amenities/SPA Services.png";
-import AtlantaSuiteBedroom from "../assets/atlanta/AtlantaSuiteBedroom.jpeg";
-import AtlantaBedroomAmenity from "../assets/atlanta/Amenities/Bedroom.png";
-import StoneMountain from "../assets/atlanta/Atlanta Attractions/Stone Mountain.jpeg";
-import Aquarium from "../assets/atlanta/Atlanta Attractions/Aquarium.jpeg";
-import OlympicPark from "../assets/atlanta/Atlanta Attractions/Olympic Park.jpeg";
-import ZooEntrance from "../assets/atlanta/Atlanta Attractions/Atlanta zoo.jpeg";
+import AtlantaHeroImage from "../assets/atlanta/atlanta-property-hero-view.jpg";
+import AtlantaCreeksideView from "../assets/atlanta/atlanta-outdoor-creekside-nature.jpg";
+import AtlantaExterior from "../assets/atlanta/atlanta-property-exterior-view.jpg";
+import AtlantaBedroom from "../assets/atlanta/Amenities/atlanta-bedroom-amenity-view.png";
+import AtlantaBedroom2 from "../assets/atlanta/atlanta-bedroom-suite-view.jpg";
+import AtlantaCreekside from "../assets/atlanta/Amenities/atlanta-outdoor-creek-view.png";
+import AtlantaDining from "../assets/atlanta/atlanta-bathroom-luxury-shower.jpg";
+import AtlantaEntrance from "../assets/atlanta/Amenities/atlanta-bedroom-entrance.png";
+import AtlantaLounge from "../assets/atlanta/Amenities/atlanta-living-room-lounge.png";
+import AtlantaReception from "../assets/atlanta/Amenities/atlanta-living-room-seating.png";
+import AtlantaLuxurySuite from "../assets/atlanta/atlanta-bedroom-luxury-suite.jpg";
+import AtlantaSwing from "../assets/atlanta/Amenities/atlanta-outdoor-swing-relax.png";
+import AtlantaSpaServices from "../assets/atlanta/Amenities/atlanta-spa-massage-setup.png";
+import AtlantaSuiteBedroom from "../assets/atlanta/atlanta-bedroom-private-suite.jpg";
+// import AtlantaBedroomAmenity from "../assets/atlanta/Amenities/atlanta-bedroom-amenity-view.png"; // duplicate of AtlantaBedroom
+import StoneMountain from "../assets/atlanta/Atlanta Attractions/atlanta-attractions-stone-mountain.jpg";
+import Aquarium from "../assets/atlanta/Atlanta Attractions/atlanta-attractions-georgia-aquarium.jpg";
+import OlympicPark from "../assets/atlanta/Atlanta Attractions/atlanta-attractions-olympic-park.jpg";
+import ZooEntrance from "../assets/atlanta/Atlanta Attractions/atlanta-attractions-zoo-entrance.jpg";
 
 export default function Atlanta() {
   const accommodations = [
@@ -113,17 +113,18 @@ export default function Atlanta() {
                   <h4 className="font-semibold text-center">Bedroom</h4>
                 </CardContent>
               </Card>
+
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
                   <img
-                    src={AtlantaCreekside}
-                    alt="Atlanta Creekside"
+                    src={AtlantaDining}
+                    alt="Atlanta luxury bathroom shower"
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
                 </div>
                 <CardContent className="p-4">
-                  <h4 className="font-semibold text-center">Creekside</h4>
+                  <h4 className="font-semibold text-center">Luxury Bathroom</h4>
                 </CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
@@ -303,7 +304,7 @@ export default function Atlanta() {
                 </CardHeader>
                 <div className="relative h-48 bg-muted">
                   <img
-                    src={index === 0 ? AtlantaSuiteBedroom : AtlantaBedroomAmenity}
+                    src={index === 0 ? AtlantaSuiteBedroom : AtlantaBedroom}
                     alt={`${room.title} bed and amenities`}
                     className="h-full w-full object-cover"
                     loading="lazy"

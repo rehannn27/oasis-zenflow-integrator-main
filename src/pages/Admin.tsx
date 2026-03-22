@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Lock, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { databaseService } from "@/lib/database";
+// import { databaseService } from "@/lib/database";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Admin() {
@@ -20,7 +20,7 @@ export default function Admin() {
     setIsLoading(true);
 
     try {
-      const user = await databaseService.signInAdmin(email, password);
+      const user = null; // Admin login disabled - static for deployment
 
       if (user) {
         toast({

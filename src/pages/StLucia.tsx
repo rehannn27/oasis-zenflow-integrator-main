@@ -4,33 +4,33 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Users, Bed, Sparkles, Calendar, Palmtree } from "lucide-react";
 
 // ST. LUCIA IMAGES
-import StLuciaHero from "../assets/1.png";
-import StLuciaSPATreatment from "../assets/stlucia/Amenities/StLuciaSpaTreatment.png";
-import StLuciaLivingRoom from "../assets/stlucia/Amenities/StLuciaLivingRoom.png";
-import StLuciaKitchen from "../assets/stlucia/Amenities/StLuciaKitchenDining.png";
-import StLuciaBathroom from "../assets/stlucia/Amenities/StLuciaBathroom.png";
-import StLuciaPitons from "../assets/stlucia/st-lucia-pitons.jpg";
-import StLuciaCruise from "../assets/stlucia/StLucia Attractions/StLuciaCruise.jpeg";
-import StLuciaMudbath from "../assets/stlucia/StLucia Attractions/StLuciaMudbath.jpeg";
-import StLuciaSulphurSpring from "../assets/stlucia/StLucia Attractions/StLuciaSulphurSpring.jpeg";
-import StLuciaBambooRafting from "../assets/stlucia/StLucia Attractions/StLuciaBambooRafting.jpeg";
-import StLuciaGalleryHero from "../assets/11.png";
-import StLuciaBedroom from "../assets/stlucia/Room View/StLuciaBedroom.jpg";
-import StLuciaGardenPath from "../assets/stlucia/Room View/StLuciaGardenPath.jpeg";
-import StLuciaRestaurant from "../assets/stlucia/Room View/StLuciaRestaurant.jpeg";
-import GazeboStLucia from "../assets/gazebostluia.jpg";
-import SpaStLucia from "../assets/spastlucia.jpg";
+import StLuciaHero from "../assets/stlucia-property-hero-view.png";
+import StLuciaSPATreatment from "../assets/stlucia/Amenities/stlucia-spa-massage-room.png";
+import StLuciaLivingRoom from "../assets/stlucia/Amenities/stlucia-living-room-cozy.png";
+import StLuciaKitchen from "../assets/stlucia/Amenities/stlucia-kitchen-dining-area.png";
+import StLuciaBathroom from "../assets/stlucia/Amenities/stlucia-bathroom-modern.png";
+// import StLuciaPitons from "../assets/stlucia/atlucia-attractions-pitons.jpg"; // Optional, not used
+import StLuciaCruise from "../assets/stlucia/StLucia Attractions/stlucia-attractions-caribbean-cruise.jpg";
+import StLuciaMudbath from "../assets/stlucia/StLucia Attractions/stlucia-attractions-volcanic-mudbath.jpg";
+import StLuciaSulphurSpring from "../assets/stlucia/StLucia Attractions/stlucia-attractions-sulphur-springs.jpg";
+import StLuciaBambooRafting from "../assets/stlucia/StLucia Attractions/stlucia-attractions-bamboo-rafting.jpg";
+import StLuciaGalleryHero from "../assets/stlucia-property-main-view.png";
+import StLuciaBedroom from "../assets/stlucia/Room View/stlucia-bedroom-ocean-view.jpg";
+import StLuciaGardenPath from "../assets/stlucia/Room View/stlucia-outdoor-garden-path.jpg";
+import StLuciaRestaurant from "../assets/stlucia/Room View/stlucia-kitchen-dining-view.jpg";
+import GazeboStLucia from "../assets/stlucia-outdoor-creekside-gazebo.jpg";
+import SpaStLucia from "../assets/stlucia-spa-main-room.jpg";
 
 // NEW PHOTOS IMPORTS
-import GazeboView from "../assets/gazebo.jpeg";
-import NewPhoto2 from "../assets/new2.jpeg";
-import NewPhoto3 from "../assets/new3.jpeg";
-import NewPhoto4 from "../assets/new4.jpeg";
-import NewPhoto5 from "../assets/new5.jpeg";
-import Photo6 from "../assets/6.jpeg";
-import Photo7 from "../assets/7.jpeg";
-import Photo8 from "../assets/8.jpeg";
-import Photo9 from "../assets/9.jpeg";
+import GazeboView from "../assets/stlucia-outdoor-gazebo.jpg";
+import NewPhoto2 from "../assets/stlucia-bedroom-cozy.jpg";
+import NewPhoto3 from "../assets/stlucia-dining-area.jpg";
+import NewPhoto4 from "../assets/stlucia-kitchen-modern.jpg";
+import NewPhoto5 from "../assets/stlucia-bathroom-luxury.jpg";
+// import Photo6 from "../assets/stlucia-bathroom-modern.png"; // missing file, using StLuciaBathroom instead
+// import Photo7 from "../assets/stlucia-spa-main-room.jpg"; // using SpaStLucia instead
+// import Photo8 from "../assets/stlucia-bathroom-modern.jpg"; // duplicate of StLuciaBathroom
+// import Photo9 from "../assets/stlucia-bathroom-luxury.jpg"; // redundant bathroom, using NewPhoto5
 
 export default function StLucia() {
   const amenities = [
@@ -322,13 +322,13 @@ export default function StLucia() {
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
-                  <img src={Photo6} alt="Property View 1" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={StLuciaBathroom} alt="St. Lucia modern bathroom" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Bath</h4></CardContent>
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
-                  <img src={Photo7} alt="Property View 2" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={SpaStLucia} alt="St. Lucia spa room" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Bath</h4></CardContent>
               </Card>
@@ -340,7 +340,7 @@ export default function StLucia() {
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
-                  <img src={Photo9} alt="Property View 4" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={NewPhoto5} alt="St. Lucia luxury bathroom" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">Bath</h4></CardContent>
               </Card>

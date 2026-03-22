@@ -1,9 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Sparkles } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { getSupabaseClient, isSupabaseConfigured } from "@/lib/supabaseClient";
+// import { getSupabaseClient, isSupabaseConfigured } from "@/lib/supabaseClient";
 
-type GalleryImage = { src: string; title: string; category?: string };
+type GalleryImage = { src: string; title: string; alt: string; category?: string };
 
 function humanizeFilename(path: string): string {
   const filename = path.split("/").pop() || path;
@@ -51,7 +51,10 @@ export default function Gallery() {
         //   return null as unknown as GalleryImage;
         // }
 
-        return { src: url, title: humanizeFilename(path), category };
+        const title = humanizeFilename(path);
+        const location = category || 'Oasis Wellness Retreat';
+        const alt = `${title} in ${location} - luxury spa and wellness retreat`;
+        return { src: url, title, alt, category };
       })
       .filter(Boolean) as GalleryImage[];
   }, []);
@@ -59,11 +62,11 @@ export default function Gallery() {
   useEffect(() => {
     let cancelled = false;
 
-    async function load() {
+    async function load() { // Fallback to local only
       // Prefer Supabase if configured, fallback to local assets
-      if (isSupabaseConfigured()) {
+      if (false) { // Supabase disabled
         try {
-          const supabase = getSupabaseClient();
+            const supabase = null; // No supabase
           if (supabase) {
             const { data, error } = await supabase.storage
               .from("gallery")
@@ -72,10 +75,12 @@ export default function Gallery() {
             const withUrls: GalleryImage[] = (data || [])
               .filter((f) => f.name && !f.name.endsWith("/"))
               .map((f) => {
+                const title = humanizeFilename(f.name);
+                const alt = `${title} in Oasis Wellness Retreat - luxury spa and wellness retreat`;
                 const { data: urlData } = supabase.storage
                   .from("gallery")
                   .getPublicUrl(f.name);
-                return { src: urlData.publicUrl, title: humanizeFilename(f.name) };
+                return { src: urlData.publicUrl, title, alt };
               });
             if (!cancelled) setImages(withUrls.length ? withUrls : localImages);
           } else {

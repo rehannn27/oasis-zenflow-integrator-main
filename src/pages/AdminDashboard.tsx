@@ -5,13 +5,13 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { LogOut, Calendar, Users, MapPin, Phone, Mail, CheckCircle, XCircle, Clock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { databaseService, type Booking } from "@/lib/database";
+// import { databaseService, type Booking } from "@/lib/database";
 import { useToast } from "@/hooks/use-toast";
 
 export default function AdminDashboard() {
   const { toast } = useToast();
   const navigate = useNavigate();
-  const [bookings, setBookings] = useState<Booking[]>([]);
+  const [bookings, setBookings] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function AdminDashboard() {
 
   const loadBookings = async () => {
     try {
-      const data = await databaseService.getBookings();
+    const data = [];
       setBookings(data);
     } catch (error) {
       console.error('Error loading bookings:', error);
