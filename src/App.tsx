@@ -15,6 +15,9 @@ import Contact from "./pages/Contact";
 import Book from "./pages/Book";
 import Admin from "./pages/Admin";
 import AdminDashboard from "./pages/AdminDashboard";
+import Retreats from "./pages/Retreats";
+import Workshops from "./pages/Workshops";
+import Testimonials from "./pages/Testimonials";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +43,9 @@ const App = () => (
               <AdminDashboard />
             </ProtectedRoute>
           } />
+          <Route path="/retreats" element={<Retreats />} />
+          <Route path="/workshops" element={<Workshops />} />
+          <Route path="/testimonials" element={<Testimonials />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -14,6 +14,9 @@ export const Header = () => {
     { name: "St. Lucia", path: "/st-lucia" },
     { name: "Services", path: "/services" },
     { name: "Gallery", path: "/gallery" },
+    { name: "Retreats", path: "/retreats" },
+    { name: "Workshops", path: "/workshops" },
+    { name: "Testimonials", path: "/testimonials" },
     { name: "Contact", path: "/contact" },
   ];
 

@@ -143,7 +143,6 @@ export default function StLucia() {
                 </CardContent>
               </Card>
 
-
             </div>
           </div>
 
@@ -334,7 +333,7 @@ export default function StLucia() {
               </Card>
               <Card className="overflow-hidden hover:shadow-[var(--shadow-soft)] transition-[var(--transition-smooth)]">
                 <div className="relative h-64 bg-muted overflow-hidden">
-                  <img src={Photo8} alt="Property View 3" className="w-full h-full object-cover" loading="lazy" />
+                  <img src={StLuciaBathroom} alt="Property View 3" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <CardContent className="p-4"><h4 className="font-semibold text-center">SPA</h4></CardContent>
               </Card>
@@ -592,4 +591,4 @@ export default function StLucia() {
       </section>
     </div>
   );
-}
+} 
